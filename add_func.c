@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   add_func.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amasol <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/15 17:02:06 by amasol            #+#    #+#             */
-/*   Updated: 2018/09/15 17:02:07 by amasol           ###   ########.fr       */
+/*   Created: 2018/09/19 12:21:41 by amasol            #+#    #+#             */
+/*   Updated: 2018/09/19 12:21:42 by amasol           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int			main(void)
+void 		check_symbol(t_room *rm)
 {
-	int i = 1;
+	char *tmp;
 
-	t_gl pr;
-
-	pr.fd = open("test", O_RDONLY);
-	pr.ants = 0;
-	pr.end = 0;
-	pr.start = 0;
-//	while (get_next_line(pr.fd, &pr.line) > 0)
-	pr.rms = NULL;
-	while ((get_next_line(pr.fd, &pr.line) > 0) && i <= 14)
+	tmp = rm->tmp;
+	while (*tmp)
 	{
-		parsing(&pr);
-		printf("%s\n",pr.map);
-		free(pr.line);
-		i++;
+		if (*tmp == '/' || *tmp == ':' || *tmp == ';' || *tmp == '$' || *tmp == '%'
+			   || *tmp == '[' || *tmp == ']' || *tmp == '=' || *tmp == '+'
+			   || *tmp == '-' || *tmp == '(' || *tmp == ')' || *tmp == '&')
+			error();
+		tmp++;
 	}
-//	while (1);
-//	printf("%s\n", rm->name_r);
-//	printf("%d\n", rm->x);
-//	printf("%d\n", rm->y);
-	return 0;
 }

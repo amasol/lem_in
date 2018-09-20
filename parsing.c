@@ -12,9 +12,12 @@
 
 #include "lem_in.h"
 
-int 	parsing(t_gl *pr, t_room *rm)
+int 	parsing(t_gl *pr)
 {
-	int len = 0;
+	int len;
+
+	len = 0;
+	pr->com = 0;
 	if (!(pr->map = (char *)malloc(sizeof(char) * (len + 1))))
 		return (1);
 	free(pr->map);
@@ -22,14 +25,14 @@ int 	parsing(t_gl *pr, t_room *rm)
 		comment(pr);
 	else if  (pr->ants == 0)
 		ants_num(pr);
-	else if ((*pr->line != '#' && *(pr->line + 1) != '#') && pr->start == 0)
+	else if ((*pr->line != '#' && *(pr->line + 1) != '#') && pr->check_room == 0) //переделать ! так как зайдет если будет написана каше после считываения комнат !
 		not_vld_word(pr);
-	else if ((pr->ants > 1 && *pr->line != '#' ) && pr->start == 0)
+	else if ((pr->ants > 1 && *pr->line != '#' ) &&  pr->check_room == 0)
 		extra_lines(pr);
 	if (*pr->line == '#' && *(pr->line + 1) == '#')
 		check_start(pr);
-	else if (pr->start == 1)
-		save_room_s(pr, rm);
+	else if (pr->check_room == 1 && pr->com == 0)			//поставить нормальную проверку на вхождение
+		check_room(pr);
 	return (1);
 }
 
@@ -65,6 +68,7 @@ void			comment(t_gl *pr) // пропускаем коментарии
 {
 	if (*pr->line == '#' && *(pr->line + 1) != '#')
 	{
+		pr->com = 1;
 		pr->map = ft_strjoin(pr->map, pr->line);
 		free(pr->map);
 	}
@@ -77,6 +81,7 @@ void			check_start(t_gl *pr) // запись что мы увидели стар
 	i = 0;
 	if (pr->line[i] == '#' && pr->line[i + 1] == '#')
 	{
+		pr->check_room = 1;
 		i += 2;
 		if (pr->line[i] == 's')
 		{
@@ -85,42 +90,25 @@ void			check_start(t_gl *pr) // запись что мы увидели стар
 			pr->map = ft_strjoin(pr->map, pr->line);
 			free(pr->map);
 		}
+		else if (pr->line[i] == 'e')
+		{
+
+		}
+		else
+			error();
 	}
 }
 
-void			save_room_s(t_gl *pr, t_room *rm)
+t_room		*create_room(t_room **rm)
 {
-	if (pr->line && pr->start == 1 && *pr->line != 'L') //находиться лик !!!!!!!!!!!!
-	{
-		int i;
+	t_room *rms;
 
-		i = 0;
-		rm->name_r = *ft_strsplit(pr->line, ' ');
-		rm->tmp = ft_strstr(&pr->line[i], " ");
-		while (rm->tmp[i] == ' ')
-			i++;
-		error_word(rm);
-		rm->x = ft_atoi(&rm->tmp[i]);
-		while (ft_isdigit(rm->tmp[i]))
-			i++;
-		while (rm->tmp[i] == ' ')
-			i++;
-		rm->y = ft_atoi(&rm->tmp[i]);
-//		free(pr->line);
-	}
-	else if (pr->line && pr->start == 1 && *pr->line == 'L')
-	{
-		ft_putstr("Error validation\n");
-		exit(1);
-	}
+	if (!rm)
+		return (NULL);
+	if (!(rms = (t_room *)malloc(sizeof(t_room))))
+		return (NULL);
+	rms->next = *rm;
+	*rm = rms;
+	return (rms);
 }
-
-
-
-
-
-
-
-
-
 

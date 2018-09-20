@@ -65,6 +65,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lem_in.dir/main.c.o"
   "CMakeFiles/Lem_in.dir/parsing.c.o"
   "CMakeFiles/Lem_in.dir/error.c.o"
+  "CMakeFiles/Lem_in.dir/add_func.c.o"
+  "CMakeFiles/Lem_in.dir/save_room.c.o"
+  "CMakeFiles/Lem_in.dir/arr_len.c.o"
   "Lem_in.pdb"
   "Lem_in"
 )

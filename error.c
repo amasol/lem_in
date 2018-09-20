@@ -55,13 +55,25 @@ void		error()
 
 void		error_word(t_room *rm)
 {
+	int i;
 	char *tmp;
 
+	i = 0;
 	tmp = rm->tmp;
-	while (*tmp)
+	while (tmp[i])
 	{
-		if (ft_isalpha(*tmp))
+		if (ft_isalpha(tmp[i]))
 			error();
-		tmp++;
+		i++;
+	}
+	check_symbol(rm);
+}
+
+void		line_l(t_gl *pr)
+{
+	if (pr->line && *pr->line == 'L')
+	{
+		ft_putstr("Error validation\n");
+		exit(1);
 	}
 }

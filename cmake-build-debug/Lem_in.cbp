@@ -78,6 +78,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/add_func.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/arr_len.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/error.c">
 			<Option target="Lem_in"/>
 		</Unit>
@@ -280,6 +286,9 @@
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/parsing.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/save_room.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/CMakeLists.txt">

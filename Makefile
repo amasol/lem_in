@@ -1,7 +1,7 @@
 NAME = lem_in
 #FLAGS = -Wall -Wextra -Werror
 LIB = libft.a
-SRC = main.c parsing.c error.c
+SRC = main.c parsing.c error.c add_func.c save_room.c arr_len.c
 HEADERS = ./lem_in.h
 OBJ = $(SRC:.c=.o)
 all: $(NAME)

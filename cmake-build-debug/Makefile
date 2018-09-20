@@ -123,6 +123,60 @@ Lem_in/fast:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/build
 .PHONY : Lem_in/fast
 
+add_func.o: add_func.c.o
+
+.PHONY : add_func.o
+
+# target to build an object file
+add_func.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/add_func.c.o
+.PHONY : add_func.c.o
+
+add_func.i: add_func.c.i
+
+.PHONY : add_func.i
+
+# target to preprocess a source file
+add_func.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/add_func.c.i
+.PHONY : add_func.c.i
+
+add_func.s: add_func.c.s
+
+.PHONY : add_func.s
+
+# target to generate assembly for a file
+add_func.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/add_func.c.s
+.PHONY : add_func.c.s
+
+arr_len.o: arr_len.c.o
+
+.PHONY : arr_len.o
+
+# target to build an object file
+arr_len.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/arr_len.c.o
+.PHONY : arr_len.c.o
+
+arr_len.i: arr_len.c.i
+
+.PHONY : arr_len.i
+
+# target to preprocess a source file
+arr_len.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/arr_len.c.i
+.PHONY : arr_len.c.i
+
+arr_len.s: arr_len.c.s
+
+.PHONY : arr_len.s
+
+# target to generate assembly for a file
+arr_len.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/arr_len.c.s
+.PHONY : arr_len.c.s
+
 error.o: error.c.o
 
 .PHONY : error.o
@@ -1905,6 +1959,33 @@ parsing.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/parsing.c.s
 .PHONY : parsing.c.s
 
+save_room.o: save_room.c.o
+
+.PHONY : save_room.o
+
+# target to build an object file
+save_room.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_room.c.o
+.PHONY : save_room.c.o
+
+save_room.i: save_room.c.i
+
+.PHONY : save_room.i
+
+# target to preprocess a source file
+save_room.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_room.c.i
+.PHONY : save_room.c.i
+
+save_room.s: save_room.c.s
+
+.PHONY : save_room.s
+
+# target to generate assembly for a file
+save_room.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_room.c.s
+.PHONY : save_room.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1914,6 +1995,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Lem_in"
+	@echo "... add_func.o"
+	@echo "... add_func.i"
+	@echo "... add_func.s"
+	@echo "... arr_len.o"
+	@echo "... arr_len.i"
+	@echo "... arr_len.s"
 	@echo "... error.o"
 	@echo "... error.i"
 	@echo "... error.s"
@@ -2112,6 +2199,9 @@ help:
 	@echo "... parsing.o"
 	@echo "... parsing.i"
 	@echo "... parsing.s"
+	@echo "... save_room.o"
+	@echo "... save_room.i"
+	@echo "... save_room.s"
 .PHONY : help
 
 
