@@ -1,7 +1,9 @@
 #comment
 100
+##comment
 #comment
-#comment
+##dasfdsd
+##123ewefes
 ##start
 room1 23 3
 room2 16 7
@@ -13,22 +15,24 @@ room6 1 5
 room7 4 8
 ##end
 room0 9 5
-0-4
-0-6
-1-3
-4-3
-5-2
-3-5
+room0-room4
+room0-room6
+room1-room3
+room4-room3
+room5-room2
+room3-room5
 #another comment
-4-2
-2-1
-7-6
-7-2
-7-4
-6-5
+#another comment
+#another comment
+##another comment
+room4-room2
+room2-room1
+room7-room6
+room7-room2
+room7-room4
+room6-room5
 
 ---------
-продолжать работать с end и записывать данные !!!
 
 (при любой ситуации с валидной картой, ты будем записывать ее в масив!)
 Пропуск коментариев

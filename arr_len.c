@@ -21,3 +21,21 @@ int 		arr_len(char **str)
 		i++;
 	return (i);
 }
+
+int			num_spac(t_gl *pr)
+{
+	int i;
+
+	i = 0;
+	pr->space = 0;
+	while (pr->line[i])
+	{
+		while (pr->line[i] == ' ')
+		{
+			pr->space++;
+			i++;
+		}
+		i++;
+	}
+	return (pr->space);
+}

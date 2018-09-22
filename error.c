@@ -53,6 +53,16 @@ void		error()
 	exit(1);
 }
 
+void		error_check(t_gl *pr)
+{
+	int i;
+
+	i = 0;
+	if (pr->line[i] == '#' && pr->line[i + 1] == '#')
+	ft_putstr("Error validation\n");
+	exit(1);
+}
+
 void		error_word(t_room *rm)
 {
 	int i;
@@ -76,4 +86,11 @@ void		line_l(t_gl *pr)
 		ft_putstr("Error validation\n");
 		exit(1);
 	}
+}
+
+int			error_st_end(t_gl *pr)
+{
+	if (pr->first == NULL || pr->last == NULL)
+		error();
+	return (0);
 }
