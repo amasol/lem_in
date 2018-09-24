@@ -1,0 +1,6 @@
+100
+##start
+room1 2 5
+##end
+room0 9 5
+room0-room1

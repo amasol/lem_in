@@ -31,6 +31,8 @@ typedef	struct		s_room
 
 typedef	struct		s_link
 {
+	int				one;
+	int				two;
 	char			*name_l_one;
 	char			*name_l_two;
 	char			*tmp;
@@ -41,26 +43,33 @@ typedef	struct		s_link
 
 typedef struct		s_gl
 {
+	t_room			*map;
 	t_room 			*rms;
 	t_link			*link;
 	t_room			*first;
 	t_room			*last;
 
 
+
+
+	int				l_k;
+	int				l_h;
+	int				l_m;
+	int				l_s;
 	int				space;
-	char			*str_free;
 	long int		ants;
-	char			*map;
 	char			*line;
 	int				fd;
 	int				start;
 	int				end;
-	int				dop_st;
-	int				dop_en;
+	int				start_h;
+	int				end_h;
 	int				check_room;
 	int				i;
 	int				com;
 	int				go_link;
+	int 			check_st_en;
+	int				link_yes;
 
 }					t_gl;
 
@@ -81,16 +90,30 @@ void			save_room(t_gl *pr, t_room *rm);
 void			line_l(t_gl *pr);
 void			check_link(t_gl *pr);
 int				error_st_end(t_gl *pr);
-void			error_check(t_gl *pr);
 int				num_spac(t_gl *pr);
 int 			arr_len(char **str);
-int				link_line(char *tmp);
-//void			valid_st_end(t_gl *pr);
 int				comparison_line(t_gl *pr);
 int				comparison_link(t_gl *pr);
-void			save_link(t_gl *pr, t_link *link);
+int				save_link(t_gl *pr, t_link *link);
 int				comparison_link_dop(t_gl *pr);
-void			valid_double_link(t_gl *pr);
+int				save_link_help(t_gl *pr);
+int				save_link_help_two(char *str, t_gl *pr);
+int				comparison_room_link(t_gl *pr, char *tmp);
+void			check_error(t_gl *pr);
+void			save_map(t_gl *pr);
+t_room			*create_map(t_room **rm);
+
+void		zero(t_gl *pr);
+void		check_start_h_s(t_gl *pr);
+void		check_start_h_e(t_gl *pr);
+void		check_start_h_com(t_gl *pr);
+void		save_room_help(t_room *rm, char **tmp);
+void		save_l_hh(t_gl *pr, char *str);
+void		zero_l_h(t_gl *pr);
+
+
+
+void		algorithm(t_gl *pr);
 
 #endif
 

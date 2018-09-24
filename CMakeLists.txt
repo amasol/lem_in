@@ -15,6 +15,12 @@ add_executable(Lem_in
         error.c
         add_func.c
         save_room.c
-        arr_len.c)
+        arr_len.c
+        parsing_help.c
+        comparison.c
+        error_help.c
+        save_room_link.c
+        save_map.c
+        algorithm.c)
 
 link_libraries(libft/libftprintf.a)

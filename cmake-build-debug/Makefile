@@ -150,6 +150,33 @@ add_func.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/add_func.c.s
 .PHONY : add_func.c.s
 
+algorithm.o: algorithm.c.o
+
+.PHONY : algorithm.o
+
+# target to build an object file
+algorithm.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm.c.o
+.PHONY : algorithm.c.o
+
+algorithm.i: algorithm.c.i
+
+.PHONY : algorithm.i
+
+# target to preprocess a source file
+algorithm.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm.c.i
+.PHONY : algorithm.c.i
+
+algorithm.s: algorithm.c.s
+
+.PHONY : algorithm.s
+
+# target to generate assembly for a file
+algorithm.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm.c.s
+.PHONY : algorithm.c.s
+
 arr_len.o: arr_len.c.o
 
 .PHONY : arr_len.o
@@ -177,6 +204,33 @@ arr_len.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/arr_len.c.s
 .PHONY : arr_len.c.s
 
+comparison.o: comparison.c.o
+
+.PHONY : comparison.o
+
+# target to build an object file
+comparison.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/comparison.c.o
+.PHONY : comparison.c.o
+
+comparison.i: comparison.c.i
+
+.PHONY : comparison.i
+
+# target to preprocess a source file
+comparison.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/comparison.c.i
+.PHONY : comparison.c.i
+
+comparison.s: comparison.c.s
+
+.PHONY : comparison.s
+
+# target to generate assembly for a file
+comparison.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/comparison.c.s
+.PHONY : comparison.c.s
+
 error.o: error.c.o
 
 .PHONY : error.o
@@ -203,6 +257,33 @@ error.s: error.c.s
 error.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/error.c.s
 .PHONY : error.c.s
+
+error_help.o: error_help.c.o
+
+.PHONY : error_help.o
+
+# target to build an object file
+error_help.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/error_help.c.o
+.PHONY : error_help.c.o
+
+error_help.i: error_help.c.i
+
+.PHONY : error_help.i
+
+# target to preprocess a source file
+error_help.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/error_help.c.i
+.PHONY : error_help.c.i
+
+error_help.s: error_help.c.s
+
+.PHONY : error_help.s
+
+# target to generate assembly for a file
+error_help.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/error_help.c.s
+.PHONY : error_help.c.s
 
 libft/ft_atoi.o: libft/ft_atoi.c.o
 
@@ -1959,6 +2040,60 @@ parsing.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/parsing.c.s
 .PHONY : parsing.c.s
 
+parsing_help.o: parsing_help.c.o
+
+.PHONY : parsing_help.o
+
+# target to build an object file
+parsing_help.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/parsing_help.c.o
+.PHONY : parsing_help.c.o
+
+parsing_help.i: parsing_help.c.i
+
+.PHONY : parsing_help.i
+
+# target to preprocess a source file
+parsing_help.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/parsing_help.c.i
+.PHONY : parsing_help.c.i
+
+parsing_help.s: parsing_help.c.s
+
+.PHONY : parsing_help.s
+
+# target to generate assembly for a file
+parsing_help.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/parsing_help.c.s
+.PHONY : parsing_help.c.s
+
+save_map.o: save_map.c.o
+
+.PHONY : save_map.o
+
+# target to build an object file
+save_map.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_map.c.o
+.PHONY : save_map.c.o
+
+save_map.i: save_map.c.i
+
+.PHONY : save_map.i
+
+# target to preprocess a source file
+save_map.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_map.c.i
+.PHONY : save_map.c.i
+
+save_map.s: save_map.c.s
+
+.PHONY : save_map.s
+
+# target to generate assembly for a file
+save_map.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_map.c.s
+.PHONY : save_map.c.s
+
 save_room.o: save_room.c.o
 
 .PHONY : save_room.o
@@ -1986,6 +2121,33 @@ save_room.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_room.c.s
 .PHONY : save_room.c.s
 
+save_room_link.o: save_room_link.c.o
+
+.PHONY : save_room_link.o
+
+# target to build an object file
+save_room_link.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_room_link.c.o
+.PHONY : save_room_link.c.o
+
+save_room_link.i: save_room_link.c.i
+
+.PHONY : save_room_link.i
+
+# target to preprocess a source file
+save_room_link.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_room_link.c.i
+.PHONY : save_room_link.c.i
+
+save_room_link.s: save_room_link.c.s
+
+.PHONY : save_room_link.s
+
+# target to generate assembly for a file
+save_room_link.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_room_link.c.s
+.PHONY : save_room_link.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1998,12 +2160,21 @@ help:
 	@echo "... add_func.o"
 	@echo "... add_func.i"
 	@echo "... add_func.s"
+	@echo "... algorithm.o"
+	@echo "... algorithm.i"
+	@echo "... algorithm.s"
 	@echo "... arr_len.o"
 	@echo "... arr_len.i"
 	@echo "... arr_len.s"
+	@echo "... comparison.o"
+	@echo "... comparison.i"
+	@echo "... comparison.s"
 	@echo "... error.o"
 	@echo "... error.i"
 	@echo "... error.s"
+	@echo "... error_help.o"
+	@echo "... error_help.i"
+	@echo "... error_help.s"
 	@echo "... libft/ft_atoi.o"
 	@echo "... libft/ft_atoi.i"
 	@echo "... libft/ft_atoi.s"
@@ -2199,9 +2370,18 @@ help:
 	@echo "... parsing.o"
 	@echo "... parsing.i"
 	@echo "... parsing.s"
+	@echo "... parsing_help.o"
+	@echo "... parsing_help.i"
+	@echo "... parsing_help.s"
+	@echo "... save_map.o"
+	@echo "... save_map.i"
+	@echo "... save_map.s"
 	@echo "... save_room.o"
 	@echo "... save_room.i"
 	@echo "... save_room.s"
+	@echo "... save_room_link.o"
+	@echo "... save_room_link.i"
+	@echo "... save_room_link.s"
 .PHONY : help
 
 

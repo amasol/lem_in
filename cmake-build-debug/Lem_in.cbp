@@ -81,10 +81,19 @@
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/add_func.c">
 			<Option target="Lem_in"/>
 		</Unit>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/algorithm.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/arr_len.c">
 			<Option target="Lem_in"/>
 		</Unit>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/comparison.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/error.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/error_help.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/lem_in.h">
@@ -288,7 +297,16 @@
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/parsing.c">
 			<Option target="Lem_in"/>
 		</Unit>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/parsing_help.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/save_map.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/save_room.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/save_room_link.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/CMakeLists.txt">

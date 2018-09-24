@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amasol <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 22:01:58 by amasol            #+#    #+#             */
-/*   Updated: 2017/11/07 20:50:35 by amasol           ###   ########.fr       */
+/*   Created: 2018/09/24 04:43:04 by amasol            #+#    #+#             */
+/*   Updated: 2018/09/24 04:43:05 by amasol           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lem_in.h"
 
-char	*ft_strchr(const char *str, int ch)
+void		algorithm(t_gl *pr)
 {
-
-	while (*str != ch)
-	{
-		if (*str == '\0')
-			return (NULL);
-		str++;
-	}
-	return ((char *)str);
+	if (pr->link_yes)
+		printf("%s\n", "test");
 }

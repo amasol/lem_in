@@ -11,10 +11,20 @@ CMakeFiles/Lem_in.dir/arr_len.c.o: .././libft/libft.h
 CMakeFiles/Lem_in.dir/arr_len.c.o: ../arr_len.c
 CMakeFiles/Lem_in.dir/arr_len.c.o: ../lem_in.h
 
+CMakeFiles/Lem_in.dir/comparison.c.o: .././libft/get_next_line.h
+CMakeFiles/Lem_in.dir/comparison.c.o: .././libft/libft.h
+CMakeFiles/Lem_in.dir/comparison.c.o: ../comparison.c
+CMakeFiles/Lem_in.dir/comparison.c.o: ../lem_in.h
+
 CMakeFiles/Lem_in.dir/error.c.o: .././libft/get_next_line.h
 CMakeFiles/Lem_in.dir/error.c.o: .././libft/libft.h
 CMakeFiles/Lem_in.dir/error.c.o: ../error.c
 CMakeFiles/Lem_in.dir/error.c.o: ../lem_in.h
+
+CMakeFiles/Lem_in.dir/error_help.c.o: .././libft/get_next_line.h
+CMakeFiles/Lem_in.dir/error_help.c.o: .././libft/libft.h
+CMakeFiles/Lem_in.dir/error_help.c.o: ../error_help.c
+CMakeFiles/Lem_in.dir/error_help.c.o: ../lem_in.h
 
 CMakeFiles/Lem_in.dir/libft/ft_atoi.c.o: ../libft/ft_atoi.c
 CMakeFiles/Lem_in.dir/libft/ft_atoi.c.o: ../libft/get_next_line.h
@@ -260,8 +270,23 @@ CMakeFiles/Lem_in.dir/parsing.c.o: .././libft/libft.h
 CMakeFiles/Lem_in.dir/parsing.c.o: ../lem_in.h
 CMakeFiles/Lem_in.dir/parsing.c.o: ../parsing.c
 
+CMakeFiles/Lem_in.dir/parsing_help.c.o: .././libft/get_next_line.h
+CMakeFiles/Lem_in.dir/parsing_help.c.o: .././libft/libft.h
+CMakeFiles/Lem_in.dir/parsing_help.c.o: ../lem_in.h
+CMakeFiles/Lem_in.dir/parsing_help.c.o: ../parsing_help.c
+
+CMakeFiles/Lem_in.dir/save_map.c.o: .././libft/get_next_line.h
+CMakeFiles/Lem_in.dir/save_map.c.o: .././libft/libft.h
+CMakeFiles/Lem_in.dir/save_map.c.o: ../lem_in.h
+CMakeFiles/Lem_in.dir/save_map.c.o: ../save_map.c
+
 CMakeFiles/Lem_in.dir/save_room.c.o: .././libft/get_next_line.h
 CMakeFiles/Lem_in.dir/save_room.c.o: .././libft/libft.h
 CMakeFiles/Lem_in.dir/save_room.c.o: ../lem_in.h
 CMakeFiles/Lem_in.dir/save_room.c.o: ../save_room.c
+
+CMakeFiles/Lem_in.dir/save_room_link.c.o: .././libft/get_next_line.h
+CMakeFiles/Lem_in.dir/save_room_link.c.o: .././libft/libft.h
+CMakeFiles/Lem_in.dir/save_room_link.c.o: ../lem_in.h
+CMakeFiles/Lem_in.dir/save_room_link.c.o: ../save_room_link.c
 

@@ -24,6 +24,26 @@ fcntl.h
 get_next_line.h
 /Users/amasol/amasol/project/Lem_in/./libft/get_next_line.h
 
+/Users/amasol/amasol/project/Lem_in/add_func.c
+lem_in.h
+/Users/amasol/amasol/project/Lem_in/lem_in.h
+
+/Users/amasol/amasol/project/Lem_in/arr_len.c
+lem_in.h
+/Users/amasol/amasol/project/Lem_in/lem_in.h
+
+/Users/amasol/amasol/project/Lem_in/comparison.c
+lem_in.h
+/Users/amasol/amasol/project/Lem_in/lem_in.h
+
+/Users/amasol/amasol/project/Lem_in/error.c
+lem_in.h
+/Users/amasol/amasol/project/Lem_in/lem_in.h
+
+/Users/amasol/amasol/project/Lem_in/error_help.c
+lem_in.h
+/Users/amasol/amasol/project/Lem_in/lem_in.h
+
 /Users/amasol/amasol/project/Lem_in/lem_in.h
 ./libft/libft.h
 /Users/amasol/amasol/project/Lem_in/./libft/libft.h
@@ -32,7 +52,27 @@ stdio.h
 limits.h
 -
 
+/Users/amasol/amasol/project/Lem_in/main.c
+lem_in.h
+/Users/amasol/amasol/project/Lem_in/lem_in.h
+
 /Users/amasol/amasol/project/Lem_in/parsing.c
+lem_in.h
+/Users/amasol/amasol/project/Lem_in/lem_in.h
+
+/Users/amasol/amasol/project/Lem_in/parsing_help.c
+lem_in.h
+/Users/amasol/amasol/project/Lem_in/lem_in.h
+
+/Users/amasol/amasol/project/Lem_in/save_map.c
+lem_in.h
+/Users/amasol/amasol/project/Lem_in/lem_in.h
+
+/Users/amasol/amasol/project/Lem_in/save_room.c
+lem_in.h
+/Users/amasol/amasol/project/Lem_in/lem_in.h
+
+/Users/amasol/amasol/project/Lem_in/save_room_link.c
 lem_in.h
 /Users/amasol/amasol/project/Lem_in/lem_in.h
 

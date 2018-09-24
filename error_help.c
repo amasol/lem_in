@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   error_help.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amasol <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/02 22:01:58 by amasol            #+#    #+#             */
-/*   Updated: 2017/11/07 20:50:35 by amasol           ###   ########.fr       */
+/*   Created: 2018/09/23 19:30:57 by amasol            #+#    #+#             */
+/*   Updated: 2018/09/23 19:30:58 by amasol           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lem_in.h"
 
-char	*ft_strchr(const char *str, int ch)
+void		line_l(t_gl *pr)
 {
-
-	while (*str != ch)
+	if (pr->line && *pr->line == 'L')
 	{
-		if (*str == '\0')
-			return (NULL);
-		str++;
+		ft_putstr("Error validation\n");
+		exit(1);
 	}
-	return ((char *)str);
+}
+
+int			error_st_end(t_gl *pr)
+{
+	if (pr->first == NULL || pr->last == NULL)
+		error();
+	else if (pr->link_yes == 0)
+		error();
+	return (0);
 }
