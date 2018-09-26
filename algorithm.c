@@ -14,6 +14,7 @@
 
 void		algorithm(t_gl *pr)
 {
+//    exit(1);
 	if (pr->link_yes)
-		printf("%s\n", "test");
+		printf("%s\n", "\0");
 }

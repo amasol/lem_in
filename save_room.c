@@ -97,7 +97,7 @@ int				save_link_help(t_gl *pr)
 		if (str[pr->l_h] == '-')
 		{
 			tmp = ft_strsub(str, 0, pr->l_h);
-			free(tmp);
+//			free(tmp);
 			pr->l_s = ft_strlen(tmp);
 			pr->l_k = comparison_room_link(pr, tmp);
 			if (pr->l_k == 1)

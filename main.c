@@ -17,7 +17,7 @@ int			main(void)
 	int i = 1;
 	t_gl pr;
 
-	pr.fd = open("test3", O_RDONLY);
+	pr.fd = open("test1", O_RDONLY);
 	zero(&pr);
 	while (get_next_line(pr.fd, &pr.line) > 0)
 //	while ((get_next_line(pr.fd, &pr.line) > 0) && i <= 33)
