@@ -1,14 +1,22 @@
 100
 ##start
+##sadfadsfgsdfg
 room1 23 3
 room2 16 7
+##sadfdsg
 room3 16 8
+##end
+##dsfsdfgsdfg
+room0 9 5
 room4 16 5
 room5 9 3
-##end
-room0 9 5
+room6 5 12
+room7 1 32
 room0-room4
+room1-room7
+room6-room7
+room6-room0
+room1-room2
 room3-room4
-room2-room3
-room5-room2
-room5-room1
+room2-room5
+room3-room5

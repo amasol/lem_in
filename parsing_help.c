@@ -15,26 +15,13 @@
 void		check_start_h_s(t_gl *pr)
 {
 	if (ft_strcmp("##start", pr->line) == 0)
-	{
-		if (pr->start_h == 1)
-			error();
-		pr->start_h = 1;
-		pr->check_st_en = 1;
 		pr->start += 1;
-	}
 }
 
 void		check_start_h_e(t_gl *pr)
 {
 	if (ft_strcmp("##end", pr->line) == 0)
-	{
-		if (pr->end_h == 1)
-			error();
-		pr->end_h = 1;
-		if (pr->check_st_en == 1)
-			error();
 		pr->end += 1;
-	}
 }
 
 void		check_start_h_com(t_gl *pr)

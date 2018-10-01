@@ -6,6 +6,11 @@ CMakeFiles/Lem_in.dir/add_func.c.o: .././libft/libft.h
 CMakeFiles/Lem_in.dir/add_func.c.o: ../add_func.c
 CMakeFiles/Lem_in.dir/add_func.c.o: ../lem_in.h
 
+CMakeFiles/Lem_in.dir/algorithm.c.o: .././libft/get_next_line.h
+CMakeFiles/Lem_in.dir/algorithm.c.o: .././libft/libft.h
+CMakeFiles/Lem_in.dir/algorithm.c.o: ../algorithm.c
+CMakeFiles/Lem_in.dir/algorithm.c.o: ../lem_in.h
+
 CMakeFiles/Lem_in.dir/arr_len.c.o: .././libft/get_next_line.h
 CMakeFiles/Lem_in.dir/arr_len.c.o: .././libft/libft.h
 CMakeFiles/Lem_in.dir/arr_len.c.o: ../arr_len.c

@@ -15,22 +15,18 @@
 int 	parsing(t_gl *pr)
 {
 	pr->com = 0;
+	pr->ants_flag = 0;
 	if (pr->line)
 		check_error(pr);
 	if (*pr->line == '#' && *(pr->line + 1) != '#')
 		comment(pr);
 	else if  (pr->ants == 0)
 		ants_num(pr);
-	else if ((*pr->line != '#' && *(pr->line + 1) != '#')
-			&& pr->check_room == 0) //переделать ! так как зайдет если будет написана каше после считываения комнат !
-		not_vld_word(pr);
-	else if ((pr->ants > 1 && *pr->line != '#' ) &&  pr->check_room == 0)
-		extra_lines(pr);
 	if (*pr->line == '#' && *(pr->line + 1) == '#')
 		check_start(pr);
-	else if (pr->check_room == 1 && pr->com == 0 && pr->go_link == 0)			//поставить нормальную проверку на вхождение
+	else if (pr->com == 0 && pr->go_link == 0 && pr->ants_flag == 0)
 		check_room(pr);
-	else if (pr->go_link == 1 && pr->com == 0)
+	if (pr->go_link == 1 && pr->com == 0)
 		check_link(pr);
 //	free(pr->rms->name_r);
 	return (1);
@@ -53,6 +49,7 @@ void			ants_num(t_gl *pr) // записываем кол-во марашек !!!
 	i = 0;
 	if (pr->line[i])
 	{
+		pr->ants_flag = 1;
 		pr->ants = ft_atoi(pr->line);
 		if (pr->ants < 0 || pr->ants == 0)
 		{

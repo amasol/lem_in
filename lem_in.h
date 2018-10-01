@@ -20,8 +20,6 @@ typedef	struct		s_room
 {
 	char			*name_r;
 	char			*tmp;
-//	int				start;
-//	int				end;
 //	int				step;			//	шаг..
 //	char			*previous;		//	предыдущий
 	long int		x;
@@ -31,12 +29,13 @@ typedef	struct		s_room
 
 typedef	struct		s_link
 {
+	int				skipping;
 	int				one;
 	int				two;
 	char			*name_l_one;
 	char			*name_l_two;
 	char			*tmp;
-//	int				step;			//	шаг..
+	char			*step;			//	шаг..
 //	char			*previous;		//	предыдущий
 	struct s_link	*next;
 }					t_link;
@@ -48,7 +47,7 @@ typedef struct		s_gl
 	t_link			*link;
 	t_room			*first;
 	t_room			*last;
-
+	t_link 			*queue;
 
 
 
@@ -58,6 +57,7 @@ typedef struct		s_gl
 	int				l_s;
 	int				space;
 	long int		ants;
+	int			ants_flag;
 	char			*line;
 	int				fd;
 	int				start;
@@ -76,9 +76,7 @@ typedef struct		s_gl
 int				main(void);
 int				parsing(t_gl *pr);
 void			ants_num(t_gl *pr);
-void			extra_lines(t_gl *pr);
 void			comment(t_gl *pr);
-void			not_vld_word(t_gl *pr);
 void			check_start(t_gl *pr);
 void			error();
 void			error_word(t_room *rm);
@@ -102,18 +100,21 @@ int				comparison_room_link(t_gl *pr, char *tmp);
 void			check_error(t_gl *pr);
 void			save_map(t_gl *pr);
 t_room			*create_map(t_room **rm);
+int				check_link_no_room(t_gl *pr);
 
-void		zero(t_gl *pr);
-void		check_start_h_s(t_gl *pr);
-void		check_start_h_e(t_gl *pr);
-void		check_start_h_com(t_gl *pr);
-void		save_room_help(t_room *rm, char **tmp);
-void		save_l_hh(t_gl *pr, char *str);
-void		zero_l_h(t_gl *pr);
+void			zero(t_gl *pr);
+void			check_start_h_s(t_gl *pr);
+void			check_start_h_e(t_gl *pr);
+void			check_xy(char *tmp);
+void			check_start_h_com(t_gl *pr);
+void			save_room_help(t_room *rm, char **tmp);
+void			save_l_hh(t_gl *pr, char *str);
+void			zero_l_h(t_gl *pr);
 
 
-
-void		algorithm(t_gl *pr);
+void			algorithm(t_gl *pr);
+char			*search_connection(t_gl *pr);
+void			save_connection(t_gl *pr);
 
 #endif
 

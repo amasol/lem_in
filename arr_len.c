@@ -39,3 +39,29 @@ int			num_spac(t_gl *pr)
 	}
 	return (pr->space);
 }
+
+void		check_xy(char *tmp)
+{
+	int i;
+
+	i = 0;
+	while (tmp[i])
+	{
+		if  (tmp[i] == ',' || tmp[i] == '.' ||
+			tmp[i] == ':' || tmp[i] == ';' ||
+			tmp[i] == '-' || tmp[i] == '+')
+			error();
+		i++;
+	}
+}
+
+int		check_link_no_room(t_gl *pr)
+{
+	num_spac(pr);
+	if (pr->space < 2)
+	{
+		pr->go_link = 1;
+		return (1);
+	}
+	return (0);
+}

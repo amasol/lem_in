@@ -12,41 +12,6 @@
 
 #include "lem_in.h"
 
-void		extra_lines(t_gl *pr)
-{
-	int i;
-
-	i = 0;
-	while (pr->line[i] != '\0')
-	{
-		if (ft_isalpha(pr->line[i]))
-		{
-			ft_putstr("Error validation\n");
-			exit(1);
-		}
-		i++;
-	}
-}
-
-void		not_vld_word(t_gl *pr)
-{
-	int i;
-
-	i = 0;
-	if (*pr->line != '#' && *(pr->line + 1) != '#')
-	{
-		while (pr->line[i] != '\0')
-		{
-			if (ft_isalpha(pr->line[i]) || pr->ants > 1)
-			{
-				ft_putstr("Error validation\n");
-				exit(1);
-			}
-			i++;
-		}
-	}
-}
-
 void		error()
 {
 	ft_putstr("Error validation\n");

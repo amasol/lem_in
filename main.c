@@ -14,21 +14,22 @@
 
 int			main(void)
 {
-	int i = 1;
 	t_gl pr;
 
-	pr.fd = open("test3", O_RDONLY);
+	pr.fd = open("test1", O_RDONLY);
 	zero(&pr);
 	while (get_next_line(pr.fd, &pr.line) > 0)
-//	while ((get_next_line(pr.fd, &pr.line) > 0) && i <= 33)
 	{
 		save_map(&pr);
-		if (*pr.line == '\0')
+		if (*pr.line == '\0') //если файла нету то error, а если в конце просто пустые строки то это нормально !!!
 			error();
+//		else if (*pr.line == NULL)
+//			close (1);
 		parsing(&pr);
 		free(pr.line);
-		i++;
 	}
+	if (pr.first == NULL || pr.last == NULL)
+		error();
 	comparison_link_dop(&pr);
 	comparison_line(&pr);
 	comparison_link(&pr);
@@ -49,4 +50,8 @@ void		zero(t_gl *pr)
 	pr->rms = NULL;
 	pr->link = NULL;
 	pr->link_yes = 0;
+	pr->first = NULL;
+	pr->last = NULL;
+	pr->ants_flag = 1;
+	pr->space = 0;
 }
