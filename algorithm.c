@@ -12,53 +12,156 @@
 
 #include "lem_in.h"
 
-void		algorithm(t_gl *pr)
+t_link			*algorithm(t_gl *pr)
 {
-	t_room *search_r;
-	t_room *tmp;
+	t_link *search_tmp;
+	t_link *tmp;
+	char *str;
 
-	search_r = pr->rms;
-	tmp = pr->first;
-//	pr->queue = pr->link;
-	while (search_r != NULL)
+	if (!(search_tmp = (t_link *)malloc(sizeof(t_link))))
+		return (NULL);
+	tmp = search_tmp;
+	str = ft_strdup(pr->first->name_r);
+	while (search_tmp && search_tmp->start_let != -1)
 	{
-//		save_connection(pr);
-		tmp->name_r = search_connection(pr);
-		search_r = search_r->next;
-//		pr->queue= pr->queue->next;
+		search_tmp->step = 0;
+		search_tmp->start_let = 0;
+		search_tmp->skipping = 0;
+		search_tmp->skipping_two = 0;
+		search_tmp->way = ft_strsplit(pr->first->name_r, '\0');
+		while (search_tmp->step != 1 && search_tmp->start_let != -1 && search_tmp ->skipping_two != 1)
+		{
+			search_tmp->start_let = search_connection(pr, search_tmp);
+			if (search_tmp->start_let == 0)
+				search_tmp->start_let = -1;
+		}
+		if (search_tmp->start_let != -1 )
+		{
+			pr->first->name_r = str;
+			if (!(search_tmp->next = (t_link *)malloc(sizeof(t_link))))
+				return (NULL);
+			search_tmp = search_tmp->next;
+		}
 	}
+	definition_short(tmp);
+	return (search_tmp);
 }
 
-char		*search_connection(t_gl *pr)
+int			search_connection(t_gl *pr, t_link *search_tmp)
 {
 	t_link *tmp_sr;
 	t_link *tmp;
 
 	tmp_sr = pr->link;
 	tmp = pr->link;
-	while (tmp_sr)
+	while (tmp_sr && search_tmp->step != 1)
 	{
-		if ((ft_strcmp(pr->first->name_r, tmp_sr->name_l_one) == 0) && pr->link->skipping != 1)
+		if ((ft_strcmp(pr->first->name_r, tmp_sr->name_l_one) == 0) && tmp_sr->skipping != 1)
 		{
-			pr->link->skipping = 1;
+			tmp_sr->skipping = 1;
+			search_tmp->start_let++;
+			pr->first->name_r = tmp_sr->name_l_two;
+			check_end(pr, search_tmp);
 			pr->link = tmp;
-			return (tmp_sr->name_l_two);
+			save_way(search_tmp, tmp_sr->name_l_two);
+			return (search_tmp->start_let);
 		}
-		else if ((ft_strcmp(pr->first->name_r, tmp_sr->name_l_two) == 0) && pr->link->skipping != 1)
+		else if ((ft_strcmp(pr->first->name_r, tmp_sr->name_l_two) == 0) && tmp_sr->skipping != 1)
 		{
-			pr->link->skipping = 1;
+			search_tmp->start_let++;
+			tmp_sr->skipping = 1;
+			pr->first->name_r = tmp_sr->name_l_one;
+			check_end(pr, search_tmp);
 			pr->link = tmp;
-			return (tmp_sr->name_l_one);
+			save_way(search_tmp, tmp_sr->name_l_one);
+			return (search_tmp->start_let);
 		}
 		tmp_sr = tmp_sr->next;
 		pr->link = pr->link->next;
 	}
+	if (search_tmp->skipping == 0)
+		search_tmp->skipping_two = 1;
+	pr->link = tmp;
+	return (search_tmp->start_let);
+}
+
+void		check_end(t_gl *pr, t_link *search_tmp)
+{
+	if (ft_strcmp(pr->first->name_r, pr->last->name_r) == 0)
+		search_tmp->step = 1;
+}
+
+int			save_way(t_link *search_tmp, char *str)
+{
+//	int i;
+//
+//	i = 0;
+	if (!(search_tmp->way = (char **)malloc(sizeof(char *))))
+		return (0);
+	search_tmp->way = ft_strsplit(str, '\0');
+//	while (search_tmp->way[i])
+//	{
+//		printf("%s\n", search_tmp->way[i]);
+//		i++;
+//	}
+	return (0);
+}
+
+void	definition_short(t_link *search_tmp)
+{
+	t_link *tmp;
+	t_link *result;
+
+	tmp = search_tmp;
+	if (tmp) // тут должно быть кол-во наших путей, что бы было равное кол-во итераций!!!
+	{
+		while (tmp->skipping_two == 1)
+			tmp = tmp->next;
+		result = search_short(tmp->start_let, tmp);
+	}
+}
+
+
+//сделать так что бы я мог отличать по возростающему 1 2 3 величину наших путей !!!
+t_link		*search_short(int start_let, t_link *search_tmp)
+{
+	t_link *search;
+
+	search = search_tmp;
+	search->search_short = 0;
+	search = search->next;
+	if (start_let == search->start_let)
+	{
+		search->search_short = 1;
+		return (search);
+	}
+	if (start_let > search->start_let)
+	{
+		search->search_short = 1;
+		return (search);
+	}
+	while (start_let < search->start_let)
+		search = search->next;
 	return (NULL);
 }
 
-//void			save_connection( t_gl *pr)
-//{
-//	pr->queue->next = (t_link *)malloc(sizeof(t_link));
-//	pr->queue->step = pr->first->name_r;
-//	pr->queue = pr->queue->next;
-//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

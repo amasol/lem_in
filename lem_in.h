@@ -18,10 +18,9 @@
 
 typedef	struct		s_room
 {
+	int				repeat;
 	char			*name_r;
 	char			*tmp;
-//	int				step;			//	шаг..
-//	char			*previous;		//	предыдущий
 	long int		x;
 	long int		y;
 	struct s_room	*next;
@@ -29,14 +28,20 @@ typedef	struct		s_room
 
 typedef	struct		s_link
 {
+	int				search_short;
 	int				skipping;
+	int				skipping_two;
 	int				one;
+	int				one_h;
 	int				two;
+	int				two_h;
 	char			*name_l_one;
 	char			*name_l_two;
 	char			*tmp;
-	char			*step;			//	шаг..
-//	char			*previous;		//	предыдущий
+	int				step;
+	int				start_let;
+	char			**way;
+	char			*way_room;
 	struct s_link	*next;
 }					t_link;
 
@@ -62,14 +67,15 @@ typedef struct		s_gl
 	int				fd;
 	int				start;
 	int				end;
-	int				start_h;
-	int				end_h;
+//	int				start_let;
+	int				end_let;
 	int				check_room;
 	int				i;
 	int				com;
 	int				go_link;
 	int 			check_st_en;
 	int				link_yes;
+	int				way;
 
 }					t_gl;
 
@@ -112,9 +118,18 @@ void			save_l_hh(t_gl *pr, char *str);
 void			zero_l_h(t_gl *pr);
 
 
-void			algorithm(t_gl *pr);
-char			*search_connection(t_gl *pr);
-void			save_connection(t_gl *pr);
+t_link			*algorithm(t_gl *pr);
+int				search_connection(t_gl *pr, t_link *search_r);
+int				ft_list_size(t_link *begin_list);
+void			check_end(t_gl *pr, t_link *search_tmp);
+int				save_way(t_link *search_tmp, char *str);
+void			definition_short(t_link *search_tmp);
+t_link			*search_short(int step, t_link *search_tmp);
+
+
+void			output(t_gl *pr, t_link *search);
+
+
 
 #endif
 

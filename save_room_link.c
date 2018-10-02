@@ -41,16 +41,26 @@ int				save_link_help_two(char *str, t_gl *pr)
 
 	i = 0;
 	k = 0;
+	pr->link->one_h = pr->link->one;
+	pr->link->two_h = pr->link->two;
 	j = ft_strlen(str);
 	while (i != j + 1)
 	{
+		if (i == j)
+		{
+			if (pr->link->one == 1 && pr->link->two == 1)
+			{
+				pr->link->one = pr->link->one_h;
+				pr->link->two = pr->link->two_h;
+			}
+		}
 		tmp = ft_strsub(str, 0, i);
 		k = comparison_room_link(pr, tmp);
-		if (k == 1)
-			return (1);
 		i++;
 		free(tmp);
 	}
+	if (k == 1)
+		return (1);
 	return (k);
 }
 

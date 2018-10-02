@@ -21,6 +21,8 @@ add_executable(Lem_in
         error_help.c
         save_room_link.c
         save_map.c
-        algorithm.c)
+        algorithm.c
+        ft_list_size.c
+        output.c)
 
 link_libraries(libft/libftprintf.a)

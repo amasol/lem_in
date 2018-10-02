@@ -96,6 +96,9 @@
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/error_help.c">
 			<Option target="Lem_in"/>
 		</Unit>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/ft_list_size.c">
+			<Option target="Lem_in"/>
+		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/lem_in.h">
 			<Option target="Lem_in"/>
 		</Unit>
@@ -292,6 +295,9 @@
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/main.c">
+			<Option target="Lem_in"/>
+		</Unit>
+		<Unit filename="/Users/amasol/amasol/project/Lem_in/output.c">
 			<Option target="Lem_in"/>
 		</Unit>
 		<Unit filename="/Users/amasol/amasol/project/Lem_in/parsing.c">

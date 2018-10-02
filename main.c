@@ -15,6 +15,7 @@
 int			main(void)
 {
 	t_gl pr;
+	t_link *search;
 
 	pr.fd = open("test1", O_RDONLY);
 	zero(&pr);
@@ -26,7 +27,7 @@ int			main(void)
 //		else if (*pr.line == NULL)
 //			close (1);
 		parsing(&pr);
-		free(pr.line);
+//		free(pr.line);
 	}
 	if (pr.first == NULL || pr.last == NULL)
 		error();
@@ -35,7 +36,8 @@ int			main(void)
 	comparison_link(&pr);
 	error_st_end(&pr);
 
-	algorithm(&pr);
+	search = algorithm(&pr);
+	output(&pr, search);
 
 //	while (1);
 	return 0;
@@ -54,4 +56,5 @@ void		zero(t_gl *pr)
 	pr->last = NULL;
 	pr->ants_flag = 1;
 	pr->space = 0;
+//	pr->way = 0;
 }

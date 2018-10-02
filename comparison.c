@@ -81,7 +81,7 @@ int				comparison_room_link(t_gl *pr, char *tmp)
 	{
 		while (first_tmp && tmp)
 		{
-			if (ft_strcmp(first_tmp->name_r, tmp) == 0)
+			if ((ft_strcmp(first_tmp->name_r, tmp) == 0))
 			{
 				if (pr->link->one == 0)
 				{

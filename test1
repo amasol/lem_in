@@ -12,6 +12,8 @@ room4 16 5
 room5 9 3
 room6 5 12
 room7 1 32
+room12 2 1
+room13 5 1
 room0-room4
 room1-room7
 room6-room7
@@ -20,3 +22,5 @@ room1-room2
 room3-room4
 room2-room5
 room3-room5
+room12-room1
+room12-room13

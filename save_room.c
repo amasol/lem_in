@@ -103,7 +103,9 @@ int				save_link_help(t_gl *pr)
 			pr->l_s = ft_strlen(tmp);
 			pr->l_k = comparison_room_link(pr, tmp);
 			if (pr->l_k == 1)
+			{
 				save_l_hh(pr, str);
+			}
 			if (pr->l_k == 2)
 				return (0);
 		}

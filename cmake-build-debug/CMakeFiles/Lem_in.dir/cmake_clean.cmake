@@ -74,6 +74,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lem_in.dir/save_room_link.c.o"
   "CMakeFiles/Lem_in.dir/save_map.c.o"
   "CMakeFiles/Lem_in.dir/algorithm.c.o"
+  "CMakeFiles/Lem_in.dir/ft_list_size.c.o"
+  "CMakeFiles/Lem_in.dir/output.c.o"
   "Lem_in.pdb"
   "Lem_in"
 )
