@@ -110,40 +110,79 @@ int			save_way(t_link *search_tmp, char *str)
 void	definition_short(t_link *search_tmp)
 {
 	t_link *tmp;
-	t_link *result;
+//	t_link *result;
 
 	tmp = search_tmp;
 	if (tmp) // тут должно быть кол-во наших путей, что бы было равное кол-во итераций!!!
 	{
 		while (tmp->skipping_two == 1)
 			tmp = tmp->next;
-		result = search_short(tmp->start_let, tmp);
+		search_short(tmp);
+//		result = search_short(tmp);
+//		if (tmp->start_let == result->start_let)
+			
 	}
 }
+
+
+//t_link		*search_short(t_link *search_tmp)
+void		search_short(t_link *search_tmp)
+{
+	t_link *search;
+	t_link *step;
+//	t_link *stack;
+	t_link *tmp;
+	t_link *pmt;
+
+//	stack = (t_link *)malloc(sizeof(t_link));
+//	stack->next = (t_link *)malloc(sizeof(t_link));
+
+	search = search_tmp;
+	step = search_tmp;
+	if (step->next)
+		step = step->next;
+	while (search->next)
+	{
+		while (search->start_let > step->start_let && step->start_let != -1)
+		{
+			tmp = search;
+			pmt = step;
+			search = step;
+			search->next = tmp;
+//			search = pmt->next;
+			step = pmt->next;
+		}
+//		if (search != step)
+//			step = search_tmp;
+		step = step->next;
+	}
+}
+
+
 
 
 //сделать так что бы я мог отличать по возростающему 1 2 3 величину наших путей !!!
-t_link		*search_short(int start_let, t_link *search_tmp)
-{
-	t_link *search;
-
-	search = search_tmp;
-	search->search_short = 0;
-	search = search->next;
-	if (start_let == search->start_let)
-	{
-		search->search_short = 1;
-		return (search);
-	}
-	if (start_let > search->start_let)
-	{
-		search->search_short = 1;
-		return (search);
-	}
-	while (start_let < search->start_let)
-		search = search->next;
-	return (NULL);
-}
+//t_link		*search_short(int start_let, t_link *search_tmp)
+//{
+//	t_link *search;
+//
+//	search = search_tmp;
+//	search->search_short = 0;
+//	search = search->next;
+//	if (start_let == search->start_let)
+//	{
+//		search->search_short = 1;
+//		return (search);
+//	}
+//	if (start_let > search->start_let)
+//	{
+//		search->search_short = 1;
+//		return (search);
+//	}
+//	while (start_let < search->start_let)
+//		search = search->next;
+//	return (NULL);
+//}
 
 
 

@@ -1,7 +1,10 @@
 NAME = lem_in
 FLAGS = -Wall -Wextra -Werror
 LIB = libft.a
-SRC = main.c parsing.c error.c add_func.c save_room.c arr_len.c parsing_help.c comparison.c error_help.c save_room_link.c save_map.c algorithm.c ft_list_size.c output.c
+SRC = main.c parsing.c error.c add_func.c \
+      save_room.c arr_len.c parsing_help.c \
+      comparison.c error_help.c save_room_link.c \
+      save_map.c algorithm.c ft_list_size.c output.c swap.c
 HEADERS = ./lem_in.h
 OBJ = $(SRC:.c=.o)
 all: $(NAME)

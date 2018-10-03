@@ -23,6 +23,7 @@ add_executable(Lem_in
         save_map.c
         algorithm.c
         ft_list_size.c
-        output.c)
+        output.c
+        swap.c)
 
 link_libraries(libft/libftprintf.a)

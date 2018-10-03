@@ -2202,6 +2202,33 @@ save_room_link.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/save_room_link.c.s
 .PHONY : save_room_link.c.s
 
+swap.o: swap.c.o
+
+.PHONY : swap.o
+
+# target to build an object file
+swap.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/swap.c.o
+.PHONY : swap.c.o
+
+swap.i: swap.c.i
+
+.PHONY : swap.i
+
+# target to preprocess a source file
+swap.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/swap.c.i
+.PHONY : swap.c.i
+
+swap.s: swap.c.s
+
+.PHONY : swap.s
+
+# target to generate assembly for a file
+swap.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/swap.c.s
+.PHONY : swap.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2442,6 +2469,9 @@ help:
 	@echo "... save_room_link.o"
 	@echo "... save_room_link.i"
 	@echo "... save_room_link.s"
+	@echo "... swap.o"
+	@echo "... swap.i"
+	@echo "... swap.s"
 .PHONY : help
 
 

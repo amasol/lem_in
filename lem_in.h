@@ -43,6 +43,7 @@ typedef	struct		s_link
 	char			**way;
 	char			*way_room;
 	struct s_link	*next;
+//	struct s_link	*prv;
 }					t_link;
 
 typedef struct		s_gl
@@ -124,8 +125,9 @@ int				ft_list_size(t_link *begin_list);
 void			check_end(t_gl *pr, t_link *search_tmp);
 int				save_way(t_link *search_tmp, char *str);
 void			definition_short(t_link *search_tmp);
-t_link			*search_short(int step, t_link *search_tmp);
-
+//t_link			*search_short(t_link *search_tmp);
+void			search_short(t_link *search_tmp);
+void			swap(t_link *tmp, t_link *tmp_two);
 
 void			output(t_gl *pr, t_link *search);
 
