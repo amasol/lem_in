@@ -12,42 +12,13 @@
 
 #include "lem_in.h"
 
-t_link			*algorithm(t_gl *pr)
+static void		check_end(t_gl *pr, t_link *search_tmp)
 {
-	t_link *search_tmp;
-	t_link *tmp;
-	char *str;
-
-	if (!(search_tmp = (t_link *)malloc(sizeof(t_link))))
-		return (NULL);
-	tmp = search_tmp;
-	str = ft_strdup(pr->first->name_r);
-	while (search_tmp && search_tmp->start_let != -1)
-	{
-		search_tmp->step = 0;
-		search_tmp->start_let = 0;
-		search_tmp->skipping = 0;
-		search_tmp->skipping_two = 0;
-		search_tmp->way = ft_strsplit(pr->first->name_r, '\0');
-		while (search_tmp->step != 1 && search_tmp->start_let != -1 && search_tmp ->skipping_two != 1)
-		{
-			search_tmp->start_let = search_connection(pr, search_tmp);
-			if (search_tmp->start_let == 0)
-				search_tmp->start_let = -1;
-		}
-		if (search_tmp->start_let != -1 )
-		{
-			pr->first->name_r = str;
-			if (!(search_tmp->next = (t_link *)malloc(sizeof(t_link))))
-				return (NULL);
-			search_tmp = search_tmp->next;
-		}
-	}
-	definition_short(tmp);
-	return (search_tmp);
+	if (ft_strcmp(pr->first->name_r, pr->last->name_r) == 0)
+		search_tmp->step = 1;
 }
 
-int			search_connection(t_gl *pr, t_link *search_tmp)
+static int			search_connection(t_gl *pr, t_link *search_tmp, t_f_link **f_l)
 {
 	t_link *tmp_sr;
 	t_link *tmp;
@@ -63,7 +34,7 @@ int			search_connection(t_gl *pr, t_link *search_tmp)
 			pr->first->name_r = tmp_sr->name_l_two;
 			check_end(pr, search_tmp);
 			pr->link = tmp;
-			save_way(search_tmp, tmp_sr->name_l_two);
+			save_way(tmp_sr->name_l_two, f_l);
 			return (search_tmp->start_let);
 		}
 		else if ((ft_strcmp(pr->first->name_r, tmp_sr->name_l_two) == 0) && tmp_sr->skipping != 1)
@@ -73,7 +44,7 @@ int			search_connection(t_gl *pr, t_link *search_tmp)
 			pr->first->name_r = tmp_sr->name_l_one;
 			check_end(pr, search_tmp);
 			pr->link = tmp;
-			save_way(search_tmp, tmp_sr->name_l_one);
+			save_way(tmp_sr->name_l_one, f_l);
 			return (search_tmp->start_let);
 		}
 		tmp_sr = tmp_sr->next;
@@ -85,122 +56,112 @@ int			search_connection(t_gl *pr, t_link *search_tmp)
 	return (search_tmp->start_let);
 }
 
-void		check_end(t_gl *pr, t_link *search_tmp)
-{
-	if (ft_strcmp(pr->first->name_r, pr->last->name_r) == 0)
-		search_tmp->step = 1;
-}
 
-int			save_way(t_link *search_tmp, char *str)
+
+static int		create_search_connection(t_link *search_tmp)
 {
-//	int i;
-//
-//	i = 0;
-	if (!(search_tmp->way = (char **)malloc(sizeof(char *))))
+	if (!(search_tmp->t_lk = (t_f_link *)malloc(sizeof(t_f_link))))
 		return (0);
-	search_tmp->way = ft_strsplit(str, '\0');
-//	while (search_tmp->way[i])
-//	{
-//		printf("%s\n", search_tmp->way[i]);
-//		i++;
-//	}
 	return (0);
 }
 
-void	definition_short(t_link *search_tmp)
+static void		initialization(t_link *search_tmp)
+{
+	search_tmp->step = 0;
+	search_tmp->start_let = 0;
+	search_tmp->skipping = 0;
+	search_tmp->skipping_two = 0;
+	search_tmp->search_short = 0;
+}
+
+
+t_link			*algorithm(t_gl *pr)
+{
+	t_link *search_tmp;
+	t_link *tmp;
+	t_f_link *f_l;
+	char *str;
+//	t_link *test;
+	if (!(search_tmp = (t_link *)malloc(sizeof(t_link))))
+		return (NULL);
+	tmp = search_tmp;
+//	test = search_tmp;
+	str = ft_strdup(pr->first->name_r);
+	while (search_tmp && search_tmp->start_let != -1)
+	{
+		initialization(search_tmp);
+		create_search_connection(search_tmp);
+		f_l = search_tmp->t_lk;
+		search_tmp->t_lk->room_l = ft_strdup(pr->first->name_r);
+		while (search_tmp->step != 1 && search_tmp->start_let != -1 && search_tmp ->skipping_two != 1)
+		{
+			search_tmp->start_let = search_connection(pr, search_tmp, &f_l);
+			if (search_tmp->start_let == 0)
+				search_tmp->start_let = -1;
+		}
+		if (search_tmp->start_let != -1 )
+		{
+			pr->first->name_r = str;
+			if (!(search_tmp->next = (t_link *)malloc(sizeof(t_link))))
+				return (NULL);
+//			if (!(search_tmp->prv = (t_link *)malloc(sizeof(t_link))))
+//				return (NULL);
+//			search_tmp->prv = search_tmp;
+			search_tmp = search_tmp->next;
+//			search_tmp->index++;
+		}
+	}
+	definition_short(tmp, pr);
+	return (search_tmp);
+}
+
+int			save_way(char *str, t_f_link **f_l)
+{
+	if (!((*f_l)->next = (t_f_link *)malloc(sizeof(t_f_link))))
+		return (0);
+	if ((*f_l)->next)
+	{
+		(*f_l) = (*f_l)->next;
+		(*f_l)->room_l = ft_strdup(str);
+	}
+	return (0);
+}
+
+void	definition_short(t_link *search_tmp, t_gl *pr)
 {
 	t_link *tmp;
-//	t_link *result;
+	t_link *result;
 
 	tmp = search_tmp;
-	if (tmp) // тут должно быть кол-во наших путей, что бы было равное кол-во итераций!!!
+	if (tmp->next)
 	{
 		while (tmp->skipping_two == 1)
 			tmp = tmp->next;
-		search_short(tmp);
-//		result = search_short(tmp);
-//		if (tmp->start_let == result->start_let)
-			
+		 result = search_short(tmp);
+		substitution_output(result, pr);
 	}
 }
 
-
-//t_link		*search_short(t_link *search_tmp)
-void		search_short(t_link *search_tmp)
+t_link		*search_short(t_link *search_tmp)
 {
 	t_link *search;
-	t_link *step;
-//	t_link *stack;
-	t_link *tmp;
-	t_link *pmt;
-
-//	stack = (t_link *)malloc(sizeof(t_link));
-//	stack->next = (t_link *)malloc(sizeof(t_link));
+	t_link *found;
 
 	search = search_tmp;
-	step = search_tmp;
-	if (step->next)
-		step = step->next;
 	while (search->next)
 	{
-		while (search->start_let > step->start_let && step->start_let != -1)
+		if ((search->start_let > search->next->start_let)
+			&& search->next->skipping_two != 1)
 		{
-			tmp = search;
-			pmt = step;
-			search = step;
-			search->next = tmp;
-//			search = pmt->next;
-			step = pmt->next;
+			if (found->start_let < search->next->start_let)
+				;
+			else
+			{
+				found = search->next;
+				found->search_short = 1;
+			}
 		}
-//		if (search != step)
-//			step = search_tmp;
-		step = step->next;
+		search = search->next;
 	}
+	return (found);
 }
-
-
-
-
-//сделать так что бы я мог отличать по возростающему 1 2 3 величину наших путей !!!
-//t_link		*search_short(int start_let, t_link *search_tmp)
-//{
-//	t_link *search;
-//
-//	search = search_tmp;
-//	search->search_short = 0;
-//	search = search->next;
-//	if (start_let == search->start_let)
-//	{
-//		search->search_short = 1;
-//		return (search);
-//	}
-//	if (start_let > search->start_let)
-//	{
-//		search->search_short = 1;
-//		return (search);
-//	}
-//	while (start_let < search->start_let)
-//		search = search->next;
-//	return (NULL);
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

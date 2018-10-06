@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-int		ft_list_size(t_link *begin_list)
+int		ft_list_size(t_f_link *begin_list)
 {
 	int	i;
 

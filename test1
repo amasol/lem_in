@@ -1,4 +1,4 @@
-100
+4
 ##start
 ##sadfadsfgsdfg
 room1 23 3
@@ -14,7 +14,6 @@ room6 5 12
 room7 1 32
 room12 2 1
 room13 5 1
-room14 12 6
 room15 23 7
 room16 23 5
 room17 21 12
@@ -33,8 +32,6 @@ room3-room4
 room0-room4
 room12-room1
 room12-room13
-room1-room14
-room14-room0
 room15-room1
 room15-room16
 room16-room17

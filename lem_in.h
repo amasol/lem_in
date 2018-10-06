@@ -16,6 +16,23 @@
 # include <stdio.h>
 # include <limits.h>
 
+typedef	struct		s_ants
+{
+	int 			index;
+	int				was;
+	long int		who;
+	int				end;
+	struct s_ants	*next;
+}					t_ants;
+
+
+typedef	struct		s_f_link
+{
+	int				access;
+	char			*room_l;
+	struct s_f_link	*next;
+}					t_f_link;
+
 typedef	struct		s_room
 {
 	int				repeat;
@@ -28,6 +45,10 @@ typedef	struct		s_room
 
 typedef	struct		s_link
 {
+	t_f_link 		*t_lk;
+
+
+	int 			index;
 	int				search_short;
 	int				skipping;
 	int				skipping_two;
@@ -40,10 +61,8 @@ typedef	struct		s_link
 	char			*tmp;
 	int				step;
 	int				start_let;
-	char			**way;
-	char			*way_room;
 	struct s_link	*next;
-//	struct s_link	*prv;
+	struct s_link	*prv;
 }					t_link;
 
 typedef struct		s_gl
@@ -53,7 +72,6 @@ typedef struct		s_gl
 	t_link			*link;
 	t_room			*first;
 	t_room			*last;
-	t_link 			*queue;
 
 
 
@@ -69,7 +87,6 @@ typedef struct		s_gl
 	int				start;
 	int				end;
 //	int				start_let;
-	int				end_let;
 	int				check_room;
 	int				i;
 	int				com;
@@ -120,17 +137,15 @@ void			zero_l_h(t_gl *pr);
 
 
 t_link			*algorithm(t_gl *pr);
-int				search_connection(t_gl *pr, t_link *search_r);
-int				ft_list_size(t_link *begin_list);
-void			check_end(t_gl *pr, t_link *search_tmp);
-int				save_way(t_link *search_tmp, char *str);
-void			definition_short(t_link *search_tmp);
-//t_link			*search_short(t_link *search_tmp);
-void			search_short(t_link *search_tmp);
-void			swap(t_link *tmp, t_link *tmp_two);
+int				save_way(char *str, t_f_link **f_l);
+void			definition_short(t_link *search_tmp, t_gl *pr);
+
+int				ft_list_size(t_f_link *begin_list);
+t_link			*search_short(t_link *search_tmp);
+int				substitution_output(t_link *lst, t_gl *pr);
+t_ants			*save_ants(t_ants *ants, t_gl *pr);
 
 void			output(t_gl *pr, t_link *search);
-
 
 
 #endif

@@ -36,7 +36,7 @@ t_room		*create_map(t_room **rm)
 		return (NULL);
 	map->next = *rm;
 	*rm = map;
-	if (!(map->tmp = (char *)malloc(sizeof(char))))
-		return (NULL);
+//	if (!(map->tmp = (char *)malloc(sizeof(char))))
+//		return (NULL);
 	return (map);
 }

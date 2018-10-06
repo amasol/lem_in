@@ -72,6 +72,7 @@ void			save_l_hh(t_gl *pr, char *str)
 	pr->l_h++;
 	pr->l_m -= pr->l_s;
 	str = ft_strsub(tmp, pr->l_h, pr->l_m);
-	free(tmp);
 	pr->l_k += save_link_help_two(str, pr);
+	free(tmp);
+//	while (1);
 }
