@@ -1,5 +1,5 @@
 NAME = lem_in
-FLAGS = -Wall -Wextra -Werror
+#FLAGS = -Wall -Wextra -Werror
 LIB = libft.a
 SRC = main.c parsing.c error.c add_func.c \
       save_room.c arr_len.c parsing_help.c \

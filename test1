@@ -1,44 +1,27 @@
-4
+3
+1 5 2
+3 3 3
+5 5 5
+6 6 6
+7 7 7
+8 8 8
+9 9 9
+10 10 10
 ##start
-##sadfadsfgsdfg
-room1 23 3
-room2 16 7
-##sadfdsg
-room3 16 8
+s 1 1
 ##end
-##dsfsdfgsdfg
-room0 9 5
-room4 16 5
-room5 9 3
-room6 5 12
-room7 1 32
-room12 2 1
-room13 5 1
-room15 23 7
-room16 23 5
-room17 21 12
-room18 2 15
-room21 11 6
-room22 22 5
-room23 25 8
-room24 2 17
-room1-room7
-room6-room7
-room6-room0
-room1-room2
-room2-room5
-room3-room5
-room3-room4
-room0-room4
-room12-room1
-room12-room13
-room15-room1
-room15-room16
-room16-room17
-room0-room17
-room1-room21
-room21-room22
-room22-room23
-room23-room24
-room24-room18
-room18-room0
+e 5 7
+s-e
+s-1
+1-e
+s-6
+7-6
+7-8
+9-8
+9-10
+s-3
+3-5
+5-e
+
+
+

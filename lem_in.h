@@ -19,7 +19,7 @@
 typedef	struct		s_ants
 {
 	int 			index;
-	int				was;
+	char			*was;
 	long int		who;
 	int				end;
 	struct s_ants	*next;
@@ -29,13 +29,13 @@ typedef	struct		s_ants
 typedef	struct		s_f_link
 {
 	int				access;
+	long int		who;
 	char			*room_l;
 	struct s_f_link	*next;
 }					t_f_link;
 
 typedef	struct		s_room
 {
-	int				repeat;
 	char			*name_r;
 	char			*tmp;
 	long int		x;
@@ -74,7 +74,8 @@ typedef struct		s_gl
 	t_room			*last;
 
 
-
+	int 			end_of_file;
+	int				close;
 	int				l_k;
 	int				l_h;
 	int				l_m;
@@ -126,7 +127,6 @@ void			save_map(t_gl *pr);
 t_room			*create_map(t_room **rm);
 int				check_link_no_room(t_gl *pr);
 
-void			zero(t_gl *pr);
 void			check_start_h_s(t_gl *pr);
 void			check_start_h_e(t_gl *pr);
 void			check_xy(char *tmp);
@@ -138,14 +138,14 @@ void			zero_l_h(t_gl *pr);
 
 t_link			*algorithm(t_gl *pr);
 int				save_way(char *str, t_f_link **f_l);
-void			definition_short(t_link *search_tmp, t_gl *pr);
+int				definition_short(t_link *search_tmp, t_gl *pr);
 
 int				ft_list_size(t_f_link *begin_list);
 t_link			*search_short(t_link *search_tmp);
 int				substitution_output(t_link *lst, t_gl *pr);
 t_ants			*save_ants(t_ants *ants, t_gl *pr);
 
-void			output(t_gl *pr, t_link *search);
+void			output(t_link *search);
 
 
 #endif

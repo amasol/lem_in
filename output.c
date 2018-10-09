@@ -12,42 +12,92 @@
 
 #include "lem_in.h"
 
-static char		*search_room(t_f_link *lst, int len)
+//функция которая ищет комнату по номеру итнрации гашей мурашки
+//static char		*search_room(t_f_link *lst, int len)
+//{
+//	t_f_link *tmp;
+//	int j;
+//
+//	j = 0;
+//	tmp = lst;
+//	while (j <= len && tmp != NULL)
+//	{
+//		if (j == len)
+//			return (tmp->room_l);
+//		tmp = tmp->next;
+//		j++;
+//	}
+//	return (0);
+//}
+
+static void		ant_exit(t_ants *ants, t_gl *pr)
+{
+	t_ants *tmp;
+	t_ants *ap;
+	int i;
+
+	i = 0;
+	tmp = ants;
+	while (tmp->next)
+	{
+		while (tmp->next)
+			tmp = tmp->next;
+		ap = tmp;
+	}
+	if (tmp->next == NULL)
+		ap = tmp;
+	if (ap->was)
+	{
+		if (ft_strcmp(ap->was, pr->last->name_r) == 0)
+			pr->close = 1;
+	}
+}
+
+static t_f_link		*search_room_list(t_f_link *link, long int who)
 {
 	t_f_link *tmp;
-	int j;
 
-	j = 0;
-	tmp = lst;
-	while (j <= len && tmp != NULL)
+	tmp = link;
+	while (tmp)
 	{
-		if (j == len)
-			return (tmp->room_l);
+		if (tmp->who == who)
+			return (tmp);
 		tmp = tmp->next;
-		j++;
+	}
+	return (NULL);
+}
+
+static	int	one_room(t_gl *pr, t_ants *ants)
+{
+	while (ants->next)
+	{
+		if (ft_strcmp(ants->was, pr->last->name_r) == 0)
+		{
+			printf("L%ld-%s ", ants->who, pr->last->name_r);
+			return (1);
+		}
+		ants = ants->next;
+		ants->was = pr->last->name_r;
 	}
 	return (0);
 }
 
-
+//функция которая выводит все в правильном порядке !
 int 		substitution_output(t_link *lst, t_gl *pr)
 {
 	t_f_link *link;
+	t_f_link *l_tmp;
 	t_ants *ants;
 	t_ants *tmp;
-//	long int i;
-	char *str;
 
 	link = lst->t_lk->next;
+	l_tmp = lst->t_lk->next;
 	if (!(ants = (t_ants*)malloc(sizeof(t_ants))))
 		return (0);
-//	lst->index = 0;
-//	i = pr->ants;
-
 	link->access = 0;
 	ants = save_ants(ants, pr);
 	tmp = ants;
-	while (tmp)
+	while (pr->close != 1)
 	{
 		while (tmp)
 		{
@@ -55,42 +105,50 @@ int 		substitution_output(t_link *lst, t_gl *pr)
 			{
 				link->access = 1;
 				tmp->index = 1;
+				tmp->was = link->room_l;
+				link->who = tmp->who;
 				printf("L%ld-%s ", tmp->who, link->room_l);
+				//доделать !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+				if (ft_strcmp(ants->was, pr->last->name_r) == 0)
+				{
+					one_room(pr, ants);
+					return (0);
+				}
 			}
-			printf("\n");
+			else if (link->access == 1 && tmp->index == 1 && tmp->who != -1)
+			{
+				link = search_room_list(link, tmp->who);
+				if (tmp->next != NULL)
+					link->access = 0;
+				tmp->index = 0;
+				link->who = 0;
+				link = link->next;
+				link->access = 1;
+				tmp->index = 1;
+				tmp->was = link->room_l;
+				link->who = tmp->who;
+				printf("L%ld-%s ", tmp->who, link->room_l);
+				ant_exit(ants, pr);
+				if (link->next == NULL)
+					tmp->who = -1;
+			}
 			tmp = tmp->next;
+			link = l_tmp;
 		}
+		printf("\n");
 		tmp = ants;
 	}
-
-
-
-
-
-//	while (tmp)
-//	{
-//		if (tmp->index >= 0 && str != NULL)
-//		{
-//			str = search_room(link, tmp->index);
-//			if (str == NULL)
-//				break ;
-//			printf("L%ld-%s ", tmp->who, str);
-//			tmp->index++;
-//		}
-//		printf("\n");
-//		tmp = tmp->next;
-//	}
 	return (0);
 }
 
-void			output(t_gl *pr, t_link *search)
-{
-	t_link *tmp;
-
-	tmp = search;
-	if (pr || search || tmp)
-		;
-}
+//void			output(t_link *search)
+//{
+//
+//	if (search->skipping_two == 1)
+//	{
+//		error();
+//	}
+//}
 
 
 static int		save_ants_h(t_ants **ants)
