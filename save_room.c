@@ -20,17 +20,20 @@ void			check_room(t_gl *pr)
 	{
 		pr->check_st_en = 0;
 		pr->rms = create_room(&(pr->rms));
-		if (pr->start == 1 && pr->end == 0 && pr->go_link == 0)
+		if (pr->start == 1 && pr->end == 0 && pr->go_link == 0 &&
+			pr->start_let != 1)
 		{
 			save_room(pr, pr->rms);
 			pr->first = pr->rms;
 			pr->start = 0;
+			pr->start_let = 1;
 		}
-		else if (pr->end == 1)
+		else if (pr->end == 1 && pr->end_let != 1)
 		{
 			save_room(pr, pr->rms);
 			pr->last = pr->rms;
 			pr->end = 0;
+			pr->end_let = 1;
 		}
 		else
 			save_room(pr, pr->rms);

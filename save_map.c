@@ -22,8 +22,10 @@ void		save_map(t_gl *pr)
 	if (map_save)
 	{
 		map_save->tmp = ft_strdup(pr->line);
+//		printf("%s\n", map_save->tmp);
 //		free(pr->map->tmp);
 	}
+//	printf("\n");
 }
 
 t_room		*create_map(t_room **rm)
@@ -36,7 +38,5 @@ t_room		*create_map(t_room **rm)
 		return (NULL);
 	map->next = *rm;
 	*rm = map;
-//	if (!(map->tmp = (char *)malloc(sizeof(char))))
-//		return (NULL);
 	return (map);
 }

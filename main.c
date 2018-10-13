@@ -27,7 +27,9 @@ static void		zero(t_gl *pr)
 	pr->space = 0;
 	pr->close = 0;
 	pr->end_of_file = 0;
-//	pr->way = 0;
+	pr->start_let = 0;
+	pr->end_let = 0;
+	pr->check_map = 0;
 }
 
 static void		pass(t_gl *pr)
@@ -49,7 +51,6 @@ static void		pass(t_gl *pr)
 int			main(void)
 {
 	t_gl *pr;
-	t_link *search;
 
 	pr->fd = open("test1", O_RDONLY);
 	zero(pr);
@@ -70,8 +71,7 @@ int			main(void)
 	comparison_line(pr);
 	comparison_link(pr);
 	error_st_end(pr);
-
-//	search = algorithm(&pr);
+	printf("\n");
 	algorithm(pr);
 //	output(search);
 	return (0);

@@ -70,7 +70,8 @@ void			check_start(t_gl *pr) // запись что мы увидели start &&
 	int i;
 
 	i = 0;
-	if (pr->line[i] == '#' && pr->line[i + 1] == '#' && pr->line[i + 2] != '#')
+	if (pr->line[i] == '#' && pr->line[i + 1] == '#'
+			&& pr->line[i + 2] != '#')
 	{
 		pr->check_room = 1;
 		if (ft_strcmp("##start", pr->line) == 0)
@@ -79,8 +80,8 @@ void			check_start(t_gl *pr) // запись что мы увидели start &&
 			check_start_h_e(pr);
 		else if (pr->line[i] == '#' && pr->line[i + 1] == '#')
 			check_start_h_com(pr);
-		if (pr->start > 1 || pr->end > 1)
-			error();
+//		if (pr->start > 1 || pr->end > 1)
+//			error();
 	}
 	else
 		error();

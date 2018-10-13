@@ -67,19 +67,59 @@ static t_f_link		*search_room_list(t_f_link *link, long int who)
 	return (NULL);
 }
 
-static	int	one_room(t_gl *pr, t_ants *ants)
+int					one_room(t_link *lst, t_gl *pr)
 {
+	t_f_link *link;
+	t_ants *ants;
+
+	if (!(ants = (t_ants*)malloc(sizeof(t_ants))))
+		return (0);
+	link = lst->t_lk->next;
+	ants = save_ants(ants, pr);
+
 	while (ants->next)
 	{
-		if (ft_strcmp(ants->was, pr->last->name_r) == 0)
-		{
+		if (ft_strcmp(link->room_l, pr->last->name_r) == 0)
 			printf("L%ld-%s ", ants->who, pr->last->name_r);
-			return (1);
-		}
 		ants = ants->next;
-		ants->was = pr->last->name_r;
 	}
 	return (0);
+}
+
+
+static void		substitution_output_help_two(t_ants **tmp,
+				t_f_link **link)
+{
+	if ((*link)->access == 0 && (*tmp)->index == 0)
+	{
+		(*link)->access = 1;
+		(*tmp)->index = 1;
+		(*tmp)->was = (*link)->room_l;
+		(*link)->who = (*tmp)->who;
+		printf("L%ld-%s ", (*tmp)->who, (*link)->room_l);
+	}
+}
+
+static void		substitution_output_help(t_ants **tmp,
+				t_f_link **link, t_ants **ants,t_gl **pr)
+{
+	if ((*link)->access == 1 && (*tmp)->index == 1 && (*tmp)->who != -1)
+	{
+		(*link) = search_room_list((*link), (*tmp)->who);
+		if ((*tmp)->next != NULL)
+			(*link)->access = 0;
+		(*tmp)->index = 0;
+		(*link)->who = 0;
+		(*link) = (*link)->next;
+		(*link)->access = 1;
+		(*tmp)->index = 1;
+		(*tmp)->was = (*link)->room_l;
+		(*link)->who = (*tmp)->who;
+		printf("L%ld-%s ", (*tmp)->who, (*link)->room_l);
+		ant_exit((*ants), (*pr));
+		if ((*link)->next == NULL)
+			(*tmp)->who = -1;
+	}
 }
 
 //функция которая выводит все в правильном порядке !
@@ -102,36 +142,9 @@ int 		substitution_output(t_link *lst, t_gl *pr)
 		while (tmp)
 		{
 			if (link->access == 0 && tmp->index == 0)
-			{
-				link->access = 1;
-				tmp->index = 1;
-				tmp->was = link->room_l;
-				link->who = tmp->who;
-				printf("L%ld-%s ", tmp->who, link->room_l);
-				//доделать !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-				if (ft_strcmp(ants->was, pr->last->name_r) == 0)
-				{
-					one_room(pr, ants);
-					return (0);
-				}
-			}
+				substitution_output_help_two(&tmp, &link);
 			else if (link->access == 1 && tmp->index == 1 && tmp->who != -1)
-			{
-				link = search_room_list(link, tmp->who);
-				if (tmp->next != NULL)
-					link->access = 0;
-				tmp->index = 0;
-				link->who = 0;
-				link = link->next;
-				link->access = 1;
-				tmp->index = 1;
-				tmp->was = link->room_l;
-				link->who = tmp->who;
-				printf("L%ld-%s ", tmp->who, link->room_l);
-				ant_exit(ants, pr);
-				if (link->next == NULL)
-					tmp->who = -1;
-			}
+				substitution_output_help(&tmp, &link, &ants, &pr);
 			tmp = tmp->next;
 			link = l_tmp;
 		}
@@ -141,14 +154,6 @@ int 		substitution_output(t_link *lst, t_gl *pr)
 	return (0);
 }
 
-//void			output(t_link *search)
-//{
-//
-//	if (search->skipping_two == 1)
-//	{
-//		error();
-//	}
-//}
 
 
 static int		save_ants_h(t_ants **ants)
@@ -187,3 +192,69 @@ t_ants			*save_ants(t_ants *ants, t_gl *pr)
 	}
 	return (tmp);
 }
+
+
+
+
+
+
+//int 		substitution_output(t_link *lst, t_gl *pr)
+//{
+//	t_f_link *link;
+//	t_f_link *l_tmp;
+//	t_ants *ants;
+//	t_ants *tmp;
+//
+//	link = lst->t_lk->next;
+//	l_tmp = lst->t_lk->next;
+//	if (!(ants = (t_ants*)malloc(sizeof(t_ants))))
+//		return (0);
+//	link->access = 0;
+//	ants = save_ants(ants, pr);
+//	tmp = ants;
+//	while (pr->close != 1)
+//	{
+//		while (tmp)
+//		{
+//			if (link->access == 0 && tmp->index == 0)
+//			{
+//				link->access = 1;
+//				tmp->index = 1;
+//				tmp->was = link->room_l;
+//				link->who = tmp->who;
+//				printf("L%ld-%s ", tmp->who, link->room_l);
+//			}
+//			else if (link->access == 1 && tmp->index == 1 && tmp->who != -1)
+//			{
+//				link = search_room_list(link, tmp->who);
+//				if (tmp->next != NULL)
+//					link->access = 0;
+//				tmp->index = 0;
+//				link->who = 0;
+//				link = link->next;
+//				link->access = 1;
+//				tmp->index = 1;
+//				tmp->was = link->room_l;
+//				link->who = tmp->who;
+//				printf("L%ld-%s ", tmp->who, link->room_l);
+//				ant_exit(ants, pr);
+//				if (link->next == NULL)
+//					tmp->who = -1;
+//			}
+//			tmp = tmp->next;
+//			link = l_tmp;
+//		}
+//		printf("\n");
+//		tmp = ants;
+//	}
+//	return (0);
+//}
+//void			output(t_link *search)
+//{
+//
+//	if (search->skipping_two == 1)
+//	{
+//		error();
+//	}
+//}
+

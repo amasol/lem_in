@@ -47,10 +47,13 @@ typedef	struct		s_link
 {
 	t_f_link 		*t_lk;
 
-
+	int				count;
+	int				line;
+	char 			*room_next;
+	char 			*link_next;
 	int 			index;
 	int				search_short;
-	int				skipping;
+	int			    last_room;
 	int				skipping_two;
 	int				one;
 	int				one_h;
@@ -61,6 +64,7 @@ typedef	struct		s_link
 	char			*tmp;
 	int				step;
 	int				start_let;
+	struct s_link	*last;
 	struct s_link	*next;
 	struct s_link	*prv;
 }					t_link;
@@ -87,8 +91,10 @@ typedef struct		s_gl
 	int				fd;
 	int				start;
 	int				end;
-//	int				start_let;
+	int				start_let;
+	int				end_let;
 	int				check_room;
+	int				check_map;
 	int				i;
 	int				com;
 	int				go_link;
@@ -144,6 +150,7 @@ int				ft_list_size(t_f_link *begin_list);
 t_link			*search_short(t_link *search_tmp);
 int				substitution_output(t_link *lst, t_gl *pr);
 t_ants			*save_ants(t_ants *ants, t_gl *pr);
+int				one_room(t_link *lst, t_gl *pr);
 
 void			output(t_link *search);
 
