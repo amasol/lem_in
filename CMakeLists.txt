@@ -24,6 +24,9 @@ add_executable(Lem_in
         algorithm.c
         ft_list_size.c
         output.c
-        swap.c)
+        swap.c
+        list_reverse.c
+        output_help.c
+        algorithm_help.c)
 
 link_libraries(libft/libftprintf.a)

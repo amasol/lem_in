@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/amasol/amasol/project/Lem_in/add_func.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/add_func.c.o"
   "/Users/amasol/amasol/project/Lem_in/algorithm.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/algorithm.c.o"
+  "/Users/amasol/amasol/project/Lem_in/algorithm_help.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/algorithm_help.c.o"
   "/Users/amasol/amasol/project/Lem_in/arr_len.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/arr_len.c.o"
   "/Users/amasol/amasol/project/Lem_in/comparison.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/comparison.c.o"
   "/Users/amasol/amasol/project/Lem_in/error.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/error.c.o"
@@ -74,8 +75,10 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/amasol/amasol/project/Lem_in/libft/ft_tolower.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_tolower.c.o"
   "/Users/amasol/amasol/project/Lem_in/libft/ft_toupper.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/ft_toupper.c.o"
   "/Users/amasol/amasol/project/Lem_in/libft/get_next_line.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/libft/get_next_line.c.o"
+  "/Users/amasol/amasol/project/Lem_in/list_reverse.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/list_reverse.c.o"
   "/Users/amasol/amasol/project/Lem_in/main.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/main.c.o"
   "/Users/amasol/amasol/project/Lem_in/output.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/output.c.o"
+  "/Users/amasol/amasol/project/Lem_in/output_help.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/output_help.c.o"
   "/Users/amasol/amasol/project/Lem_in/parsing.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/parsing.c.o"
   "/Users/amasol/amasol/project/Lem_in/parsing_help.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/parsing_help.c.o"
   "/Users/amasol/amasol/project/Lem_in/save_map.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/save_map.c.o"

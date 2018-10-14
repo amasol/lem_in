@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   list_reverse.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amasol <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 20:37:20 by amasol            #+#    #+#             */
-/*   Updated: 2017/11/20 14:27:21 by amasol           ###   ########.fr       */
+/*   Created: 2018/10/14 14:49:00 by amasol            #+#    #+#             */
+/*   Updated: 2018/10/14 14:49:02 by amasol           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lem_in.h"
 
-void	ft_putnbr(long int nb)
+void	ft_list_reverse(t_f_link **begin_list)
 {
-	if (nb == -2147483648)
+	t_f_link		*curr;
+	t_f_link		*next;
+	t_f_link		*prev;
+
+	curr = *begin_list;
+	prev = NULL;
+	while (curr)
 	{
-		ft_putstr("-2147483648");
-		return ;
+		next = curr->next;
+		curr->next = prev;
+		prev = curr;
+		curr = next;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb *= -1;
-	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar((nb % 10) + '0');
-	}
-	if (nb < 10)
-		ft_putchar(nb + '0');
+	*begin_list = prev;
 }

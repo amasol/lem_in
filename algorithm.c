@@ -12,112 +12,6 @@
 
 #include "lem_in.h"
 
-//static void		check_end(t_gl *pr, t_link *search_tmp)
-//{
-//	if (ft_strcmp(pr->first->name_r, pr->last->name_r) == 0)
-//		search_tmp->step = 1;
-//}
-//
-//static int			search_connection(t_gl *pr, t_link *search_tmp, t_f_link **f_l)
-//{
-//	t_link *tmp_sr;
-//	t_link *tmp;
-//
-//	tmp_sr = pr->link;
-//	tmp = pr->link;
-//	while (tmp_sr)
-//	{
-//		if ((ft_strcmp(pr->first->name_r, tmp_sr->name_l_one) == 0) && tmp_sr->skipping != 1)
-//		{
-//			if (pr->check_map == 2)
-//				tmp_sr->skipping = 1;
-//			search_tmp->start_let++;
-//			pr->first->name_r = tmp_sr->name_l_two;
-//			check_end(pr, search_tmp);
-//			pr->link = tmp;
-//			save_way(tmp_sr->name_l_two, f_l);
-//			pr->check_map = 2;
-//			return (search_tmp->start_let);
-//		}
-//		else if ((ft_strcmp(pr->first->name_r, tmp_sr->name_l_two) == 0) && tmp_sr->skipping != 1)
-//		{
-//			search_tmp->start_let++;
-//			if (pr->check_map == 2)
-//				tmp_sr->skipping = 1;
-//			pr->first->name_r = tmp_sr->name_l_one;
-//			check_end(pr, search_tmp);
-//			pr->link = tmp;
-//			save_way(tmp_sr->name_l_one, f_l);
-//			pr->check_map = 2;
-//			return (search_tmp->start_let);
-//		}
-//		tmp_sr = tmp_sr->next;
-//		pr->link = pr->link->next;
-//	}
-//	if (search_tmp->skipping == 0)
-//		search_tmp->skipping_two = 1;
-//	pr->link = tmp;
-//	return (search_tmp->start_let);
-//}
-//
-//
-//
-//static int		create_search_connection(t_link *search_tmp)
-//{
-//	if (!(search_tmp->t_lk = (t_f_link *)malloc(sizeof(t_f_link))))
-//		return (0);
-//	return (0);
-//}
-
-//t_link			*algorithm(t_gl *pr)
-//{
-//	t_link *search_tmp;
-//	t_link *tmp;
-//	t_f_link *f_l;
-//	char *str;
-//
-//	if (!(search_tmp = (t_link *)malloc(sizeof(t_link))))
-//		return (NULL);
-//	tmp = search_tmp;
-//	str = ft_strdup(pr->first->name_r);
-//	while (search_tmp && search_tmp->start_let != -1)
-//	{
-//		initialization(search_tmp);
-//		create_search_connection(search_tmp);
-//		f_l = search_tmp->t_lk;
-//		search_tmp->t_lk->room_l = ft_strdup(pr->first->name_r);
-//		while (search_tmp->step != 1 && search_tmp->start_let != -1 && search_tmp->skipping_two != 1)
-//		{
-//			search_tmp->start_let = search_connection(pr, search_tmp, &f_l);
-//			if (search_tmp->start_let == 0)
-//				search_tmp->start_let = -1;
-//		}
-//		if (search_tmp->start_let != -1 )
-//		{
-//			pr->first->name_r = str;
-//			if (!(search_tmp->next = (t_link *)malloc(sizeof(t_link))))
-//				return (NULL);
-//			search_tmp = search_tmp->next;
-//			pr->check_map = 0;
-//		}
-//	}
-//	// в эту функцию я должен вернуть свою самую короткую комнату !!!!!
-//	definition_short(tmp, pr);
-//	return (search_tmp);
-//}
-
-static void		initialization(t_link *search)
-{
-	search->step = 0;
-	search->start_let = 0;
-	search->skipping_two = 0;
-	search->search_short = 0;
-	search->last_room = 0;
-	search->index = 0;
-	search->count = 0;
-	search->line = 0;
-}
-
 static t_link			*search_help(t_link *tmp)
 {
 	if (!tmp)
@@ -127,103 +21,86 @@ static t_link			*search_help(t_link *tmp)
 	return (tmp);
 }
 
-//static t_link			*search_connection(t_link *sr, t_link *search, t_gl *pr)
-//{
-//	t_link *tmp;
-//	t_link *tmp_sr;
-//
-//	tmp = search;
-//	tmp_sr = sr;
-//	while (tmp_sr && tmp)
-//	{
-//		while (tmp_sr->next && tmp_sr->index == 1)
-//			tmp_sr = tmp_sr->next;
-//		if (tmp_sr->index == 1)
-//			return (search);
-//		if ((ft_strcmp(search->room_next, tmp_sr->name_l_one) == 0) && tmp->last_room != 1)
-//		{
-//			tmp_sr->index = 1;
-//			tmp = search_help(tmp);
-//			if (!(tmp->next = (t_link *)malloc(sizeof(t_link))))
-//				return (NULL);
-//			tmp = tmp->next;
-//			tmp->count = 1;
-//			tmp->count += search->count;
-//			tmp->next = NULL;
-//			tmp->room_next = tmp_sr->name_l_two;
-//			check_end(pr->last->name_r, tmp);
-//			if (!(tmp->last = (t_link *)malloc(sizeof(t_link))))
-//				return (NULL);
-//			tmp->last = search;
-//		}
-//		else if ((ft_strcmp(search->room_next, tmp_sr->name_l_two) == 0) && tmp->last_room != 1)
-//		{
-//			tmp_sr->index = 1;
-//			tmp = search_help(tmp);
-//			if (!(tmp->next = (t_link *)malloc(sizeof(t_link))))
-//				return (NULL);
-//			tmp = tmp->next;
-//			tmp->count = 1;
-//			tmp->count += search->count;
-//			tmp->next = NULL;
-//			tmp->room_next = tmp_sr->name_l_one;
-//			check_end(pr->last->name_r, tmp);
-//			if (!(tmp->last = (t_link *)malloc(sizeof(t_link))))
-//				return (NULL);
-//			tmp->last = search;
-//		}
-//		if (tmp_sr->next)
-//			tmp_sr = tmp_sr->next;
-//		else
-//			return (search);
-//	}
-//	return (search);
-//}
-//
-//
 
 
-static t_link			*search_connection(t_link *sr, t_link *search, t_gl *pr)
+
+static int			*search_connection_left(t_link **tmp, t_link **search,
+						t_link **tmp_sr)
+{
+	(*tmp_sr)->index = 1;
+	(*tmp) = search_help((*tmp));
+	if (!((*tmp)->next = (t_link *)malloc(sizeof(t_link))))
+		return (NULL);
+	(*tmp) = (*tmp)->next;
+	(*tmp)->count = 1;
+	(*tmp)->count += (*search)->count;
+	(*tmp)->next = NULL;
+	(*tmp)->room_next = (*tmp_sr)->name_l_two;
+	if (!((*tmp)->last = (t_link *)malloc(sizeof(t_link))))
+		return (NULL);
+	(*tmp)->last = (*search);
+	return (0);
+}
+
+
+
+static int			*search_connection_right(t_link **tmp, t_link **search,
+											   t_link **tmp_sr)
+{
+	(*tmp_sr)->index = 1;
+	(*tmp) = search_help((*tmp));
+	if (!((*tmp)->next = (t_link *)malloc(sizeof(t_link))))
+		return (NULL);
+	(*tmp) = (*tmp)->next;
+	(*tmp)->count = 1;
+	(*tmp)->count += (*search)->count;
+	(*tmp)->next = NULL;
+	(*tmp)->room_next = (*tmp_sr)->name_l_one;
+	if (!((*tmp)->last = (t_link *)malloc(sizeof(t_link))))
+		return (NULL);
+	(*tmp)->last = (*search);
+	return (0);
+}
+
+static t_f_link			*search_connection(t_link *sr, t_link *search,
+							char *last_room)
 {
 	t_link *tmp;
 	t_link *tmp_sr;
-	t_f_link *go_rm;
-	t_f_link *check;
+	t_f_link *end;
 
 	tmp = search;
 	tmp_sr = sr;
-	if (!(go_rm = (t_f_link *)malloc(sizeof(t_link))))
-		return(0);
-	check = go_rm;
 	while (tmp_sr && tmp)
 	{
-		if (ft_strcmp(search->room_next, tmp_sr->name_l_one) == 0)
+		while (tmp_sr->next && tmp_sr->index == 1)
+			tmp_sr = tmp_sr->next;
+		if (tmp_sr->index == 1)
+			return (NULL);
+		if ((ft_strcmp(search->room_next, tmp_sr->name_l_one) == 0)
+					&& tmp->last_room != 1)
 		{
-			tmp_sr->index = 1;
-			if (!(tmp->next = (t_link *)malloc(sizeof(t_link))))
-				return (NULL);
-			tmp = tmp->next;
-			tmp->next = NULL;
-			tmp->count = 1;
-			tmp->count += search->count;
-			tmp->room_next = tmp_sr->name_l_two;
-			go_rm->room_l = tmp_sr->name_l_two;
-			if (!(go_rm->next = (t_f_link *)malloc(sizeof(t_f_link))))
-				return (0);
-			go_rm = go_rm->next;
-			if (!(tmp->last = (t_link *)malloc(sizeof(t_link))))
-				return (NULL);
-			tmp->last = search;
+			search_connection_left(&tmp, &search, &tmp_sr);
+			end = check_end(last_room, tmp);
+			if (end != NULL && end->last_room == 1)
+				return (end);
 		}
-//		else if (ft_strcmp(search->room_next, tmp_sr->name_l_two) == 0)
-//		{
-//		}
+		else if ((ft_strcmp(search->room_next, tmp_sr->name_l_two) == 0)
+					&& tmp->last_room != 1)
+		{
+			search_connection_right(&tmp, &search, &tmp_sr);
+			end = check_end(last_room, tmp);
+			if (end != NULL && end->last_room == 1)
+				return (end);
+		}
 		if (tmp_sr->next)
 			tmp_sr = tmp_sr->next;
 		else
-			return (search);
+			return (NULL);
 	}
-	return (search);
+	if (end->last_room != 1)
+		error();
+	return (NULL);
 }
 
 
@@ -231,245 +108,64 @@ static t_link			*search_connection(t_link *sr, t_link *search, t_gl *pr)
 
 
 
-t_link			*algorithm(t_gl *pr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+t_link			*algorithm(t_gl *pr, t_room *map)
 {
 	t_link *search;
-	t_link *tmp;
+	t_f_link *search_tmp;
 	t_link *ss;
-//	t_f_link *f_l;
 
 	if (!(search = (t_link *)malloc(sizeof(t_link))))
 		return (NULL);
-	tmp = search;
 	initialization(search);
 	search->room_next = ft_strdup(pr->first->name_r);
 	ss = pr->link;
 	while (search)
 	{
-		search = search_connection(ss, search, pr);
+		search_tmp = search_connection(ss, search, pr->last->name_r);
+		if (search_tmp != NULL && search_tmp->last_room == 1)
+			break ;
 		search = search->next;
 	}
-	return (tmp);
+	if (search_tmp == NULL)
+		error();
+	definition_short(search_tmp, pr, map);
+	return (NULL);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-int			save_way(char *str, t_f_link **f_l)
+int			definition_short(t_f_link *search_tmp, t_gl *pr, t_room *map)
 {
-	if (!((*f_l)->next = (t_f_link *)malloc(sizeof(t_f_link))))
-		return (0);
-	if ((*f_l)->next)
-	{
-		(*f_l) = (*f_l)->next;
-		(*f_l)->room_l = ft_strdup(str);
-	}
-	return (0);
-}
-
-int			definition_short(t_link *search_tmp, t_gl *pr)
-{
-	t_link *tmp;
-	t_link *result;
-
-	tmp = search_tmp;
-	if (tmp->next)
-	{
-		while (tmp->skipping_two == 1)
-		{
-			if (tmp->next == NULL)
-			{
-				error();
-				return (1);
-			}
-			tmp = tmp->next;
-		}
-		result = search_short(tmp);
-		if (result->step != 1)
-			error();
-		result->search_short = 1;
-		if (ft_strcmp(result->t_lk->next->room_l, pr->last->name_r) == 0)
-			one_room(result, pr);
+		output_map(map);
+		if (ft_strcmp(search_tmp->next->room_l, pr->last->name_r) == 0)
+			one_room(search_tmp, pr);
 		else
-			substitution_output(result, pr);
-	}
+			substitution_output(search_tmp, pr);
 	return (0);
 }
 
-// функция котора ищет самый которкий пусть !
-t_link		*search_short(t_link *search_tmp)
-{
-	t_link *search;
-	t_link *found;
-
-	search = search_tmp;
-	found = search_tmp;
-	while (search_tmp->next)
-	{
-		while (search)
-		{
-			if (search->skipping_two == 1)
-				search = search->next;
-			if (search->next && (search->start_let > search->next->start_let
-					&& search->next->skipping_two != 1))
-				found = search->next;
-			else if (found->start_let > search->start_let
-				&& search->skipping_two != 1)
-				found = search;
-			search = search->next;
-		}
-		search_tmp = search_tmp->next;
-		search = search_tmp;
-	}
-	return (found);
-}
-
-
-
-//if (search_tmp->start_let > search->next->start_let)
-//{
-//if (search->next->next == NULL)
-//return (search_tmp);
-//}
-//while (search->next)
-//{
-//while (search->skipping_two == 1)
-//search = search->next;
-//if ((search->start_let > search->next->start_let &&
-//search->next->skipping_two != 1)
-//&& search->next->skipping_two != 1)
-//{
-//if (found->start_let > search->next->start_let)
-//found = search->next;
-//}
-//
-//search = search->next;
-//}
-//return (found);
 
 
 
 
 
 
-
-
-
-
-
-// функция котора ищет самый которкий пусть !
-//t_link		*search_short(t_link *search_tmp)
-//{
-//	t_link *search;
-//	t_link *found;
-//
-//	search = search_tmp;
-//	if (search_tmp->start_let > search->next->start_let)
-//	{
-//		if (search->next->next == NULL)
-//			return (search_tmp);
-//	}
-//	while (search->next && search->skipping_two != 1)
-//	{
-//		if ((search->start_let > search->next->start_let)
-//			&& search->next->skipping_two != 1)
-//		{
-//			if (found->start_let < search->next->start_let)
-//				;
-//			else
-//				found = search->next;
-//		}
-//		else if ((search->start_let < search->next->start_let)
-//				 && search->next->skipping_two != 1)
-//			found = search;
-//		search = search->next;
-//	}
-//	return (found);
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// попытка оотсортировать листы !
-//t_link		*search_short(t_link *search_tmp)
-//{
-//	t_link *search;
-//	t_link *tmp;
-//	t_link *tmp1;
-//
-//	search = search_tmp;
-//	while (search->next)
-//	{
-//		while (search->skipping_two == 1)
-//			search = search->next;
-//		if (search->next->skipping_two == 1 && search->next->next == NULL)
-//			break;
-//		if (search->start_let > search->next->start_let)
-//		{
-//			tmp = search;
-//			tmp1 = search->next;
-//
-//			tmp->next = tmp1->next;
-//			tmp1->next = tmp;
-//			search = tmp1;
-//			search_tmp = search;
-//		}
-//		search = search->next;
-//	}
-//	return (search_tmp);
-//}
-//
-//
-//

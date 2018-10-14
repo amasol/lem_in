@@ -28,6 +28,7 @@ typedef	struct		s_ants
 
 typedef	struct		s_f_link
 {
+	int				last_room;
 	int				access;
 	long int		who;
 	char			*room_l;
@@ -47,6 +48,7 @@ typedef	struct		s_link
 {
 	t_f_link 		*t_lk;
 
+	int				skipping;
 	int				count;
 	int				line;
 	char 			*room_next;
@@ -129,7 +131,7 @@ int				save_link_help(t_gl *pr);
 int				save_link_help_two(char *str, t_gl *pr);
 int				comparison_room_link(t_gl *pr, char *tmp);
 void			check_error(t_gl *pr);
-void			save_map(t_gl *pr);
+t_room			*save_map(t_gl *pr, t_room *map);
 t_room			*create_map(t_room **rm);
 int				check_link_no_room(t_gl *pr);
 
@@ -142,17 +144,21 @@ void			save_l_hh(t_gl *pr, char *str);
 void			zero_l_h(t_gl *pr);
 
 
-t_link			*algorithm(t_gl *pr);
-int				save_way(char *str, t_f_link **f_l);
-int				definition_short(t_link *search_tmp, t_gl *pr);
+t_link			*algorithm(t_gl *pr, t_room *map);
+int				definition_short(t_f_link *search_tmp, t_gl *pr, t_room *map);
 
-int				ft_list_size(t_f_link *begin_list);
-t_link			*search_short(t_link *search_tmp);
-int				substitution_output(t_link *lst, t_gl *pr);
+int				substitution_output(t_f_link *lst, t_gl *pr);
 t_ants			*save_ants(t_ants *ants, t_gl *pr);
-int				one_room(t_link *lst, t_gl *pr);
+int				one_room(t_f_link *lst, t_gl *pr);
 
-void			output(t_link *search);
+void			ant_exit(t_ants *ants, t_gl *pr);
+void			ft_list_reverse(t_f_link **begin_list);
+void			output_map(t_room *map);
+void			initialization(t_link *search);
+t_f_link		*end_algorithm(t_link *search);
+t_f_link		*check_end(char *last_room, t_link *search_tmp);
+void			reverse(t_f_link **list);
+//void			cleaning_leaks(t_gl *pr, t_room *map);
 
 
 #endif

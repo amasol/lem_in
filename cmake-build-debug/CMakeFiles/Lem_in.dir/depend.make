@@ -11,6 +11,11 @@ CMakeFiles/Lem_in.dir/algorithm.c.o: .././libft/libft.h
 CMakeFiles/Lem_in.dir/algorithm.c.o: ../algorithm.c
 CMakeFiles/Lem_in.dir/algorithm.c.o: ../lem_in.h
 
+CMakeFiles/Lem_in.dir/algorithm_help.c.o: .././libft/get_next_line.h
+CMakeFiles/Lem_in.dir/algorithm_help.c.o: .././libft/libft.h
+CMakeFiles/Lem_in.dir/algorithm_help.c.o: ../algorithm_help.c
+CMakeFiles/Lem_in.dir/algorithm_help.c.o: ../lem_in.h
+
 CMakeFiles/Lem_in.dir/arr_len.c.o: .././libft/get_next_line.h
 CMakeFiles/Lem_in.dir/arr_len.c.o: .././libft/libft.h
 CMakeFiles/Lem_in.dir/arr_len.c.o: ../arr_len.c
@@ -270,6 +275,11 @@ CMakeFiles/Lem_in.dir/libft/get_next_line.c.o: ../libft/get_next_line.c
 CMakeFiles/Lem_in.dir/libft/get_next_line.c.o: ../libft/get_next_line.h
 CMakeFiles/Lem_in.dir/libft/get_next_line.c.o: ../libft/libft.h
 
+CMakeFiles/Lem_in.dir/list_reverse.c.o: .././libft/get_next_line.h
+CMakeFiles/Lem_in.dir/list_reverse.c.o: .././libft/libft.h
+CMakeFiles/Lem_in.dir/list_reverse.c.o: ../lem_in.h
+CMakeFiles/Lem_in.dir/list_reverse.c.o: ../list_reverse.c
+
 CMakeFiles/Lem_in.dir/main.c.o: .././libft/get_next_line.h
 CMakeFiles/Lem_in.dir/main.c.o: .././libft/libft.h
 CMakeFiles/Lem_in.dir/main.c.o: ../lem_in.h
@@ -279,6 +289,11 @@ CMakeFiles/Lem_in.dir/output.c.o: .././libft/get_next_line.h
 CMakeFiles/Lem_in.dir/output.c.o: .././libft/libft.h
 CMakeFiles/Lem_in.dir/output.c.o: ../lem_in.h
 CMakeFiles/Lem_in.dir/output.c.o: ../output.c
+
+CMakeFiles/Lem_in.dir/output_help.c.o: .././libft/get_next_line.h
+CMakeFiles/Lem_in.dir/output_help.c.o: .././libft/libft.h
+CMakeFiles/Lem_in.dir/output_help.c.o: ../lem_in.h
+CMakeFiles/Lem_in.dir/output_help.c.o: ../output_help.c
 
 CMakeFiles/Lem_in.dir/parsing.c.o: .././libft/get_next_line.h
 CMakeFiles/Lem_in.dir/parsing.c.o: .././libft/libft.h

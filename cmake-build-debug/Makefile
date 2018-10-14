@@ -177,6 +177,33 @@ algorithm.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm.c.s
 .PHONY : algorithm.c.s
 
+algorithm_help.o: algorithm_help.c.o
+
+.PHONY : algorithm_help.o
+
+# target to build an object file
+algorithm_help.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm_help.c.o
+.PHONY : algorithm_help.c.o
+
+algorithm_help.i: algorithm_help.c.i
+
+.PHONY : algorithm_help.i
+
+# target to preprocess a source file
+algorithm_help.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm_help.c.i
+.PHONY : algorithm_help.c.i
+
+algorithm_help.s: algorithm_help.c.s
+
+.PHONY : algorithm_help.s
+
+# target to generate assembly for a file
+algorithm_help.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm_help.c.s
+.PHONY : algorithm_help.c.s
+
 arr_len.o: arr_len.c.o
 
 .PHONY : arr_len.o
@@ -2013,6 +2040,33 @@ libft/get_next_line.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/libft/get_next_line.c.s
 .PHONY : libft/get_next_line.c.s
 
+list_reverse.o: list_reverse.c.o
+
+.PHONY : list_reverse.o
+
+# target to build an object file
+list_reverse.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/list_reverse.c.o
+.PHONY : list_reverse.c.o
+
+list_reverse.i: list_reverse.c.i
+
+.PHONY : list_reverse.i
+
+# target to preprocess a source file
+list_reverse.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/list_reverse.c.i
+.PHONY : list_reverse.c.i
+
+list_reverse.s: list_reverse.c.s
+
+.PHONY : list_reverse.s
+
+# target to generate assembly for a file
+list_reverse.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/list_reverse.c.s
+.PHONY : list_reverse.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -2066,6 +2120,33 @@ output.s: output.c.s
 output.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/output.c.s
 .PHONY : output.c.s
+
+output_help.o: output_help.c.o
+
+.PHONY : output_help.o
+
+# target to build an object file
+output_help.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/output_help.c.o
+.PHONY : output_help.c.o
+
+output_help.i: output_help.c.i
+
+.PHONY : output_help.i
+
+# target to preprocess a source file
+output_help.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/output_help.c.i
+.PHONY : output_help.c.i
+
+output_help.s: output_help.c.s
+
+.PHONY : output_help.s
+
+# target to generate assembly for a file
+output_help.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/output_help.c.s
+.PHONY : output_help.c.s
 
 parsing.o: parsing.c.o
 
@@ -2244,6 +2325,9 @@ help:
 	@echo "... algorithm.o"
 	@echo "... algorithm.i"
 	@echo "... algorithm.s"
+	@echo "... algorithm_help.o"
+	@echo "... algorithm_help.i"
+	@echo "... algorithm_help.s"
 	@echo "... arr_len.o"
 	@echo "... arr_len.i"
 	@echo "... arr_len.s"
@@ -2448,12 +2532,18 @@ help:
 	@echo "... libft/get_next_line.o"
 	@echo "... libft/get_next_line.i"
 	@echo "... libft/get_next_line.s"
+	@echo "... list_reverse.o"
+	@echo "... list_reverse.i"
+	@echo "... list_reverse.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... output.o"
 	@echo "... output.i"
 	@echo "... output.s"
+	@echo "... output_help.o"
+	@echo "... output_help.i"
+	@echo "... output_help.s"
 	@echo "... parsing.o"
 	@echo "... parsing.i"
 	@echo "... parsing.s"

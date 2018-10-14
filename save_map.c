@@ -12,20 +12,22 @@
 
 #include "lem_in.h"
 
-void		save_map(t_gl *pr)
+t_room		*save_map(t_gl *pr, t_room *map)
 {
 	t_room *map_save;
 
-	//как правильно почистить ft_strdup!!!!!!!!!!!!!!!!
-	pr->map = create_map(&(pr->map));
-	map_save = pr->map;
+//	pr->map = create_map(&(pr->map));
+	map_save = map;
+//	tmp = map_save;
 	if (map_save)
 	{
 		map_save->tmp = ft_strdup(pr->line);
-//		printf("%s\n", map_save->tmp);
+		if (!(map_save->next = (t_room *)malloc(sizeof(t_room))))
+			return (NULL);
+		map_save = map_save->next;
 //		free(pr->map->tmp);
 	}
-//	printf("\n");
+	return (map_save);
 }
 
 t_room		*create_map(t_room **rm)

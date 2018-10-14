@@ -47,11 +47,10 @@ void		check_xy(char *tmp)
 	i = 0;
 	while (tmp[i])
 	{
-		if  (tmp[i] == ',' || tmp[i] == '.' ||
-			tmp[i] == ':' || tmp[i] == ';' ||
-			tmp[i] == '-' || tmp[i] == '+')
+		if (tmp[i] >= '0' && tmp[i] <= '9')
+			i++;
+		else
 			error();
-		i++;
 	}
 }
 

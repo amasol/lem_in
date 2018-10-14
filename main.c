@@ -51,7 +51,11 @@ static void		pass(t_gl *pr)
 int			main(void)
 {
 	t_gl *pr;
+	t_room *map;
+	t_room *tmp;
 
+	map = create_map(&(map));
+	tmp = map;
 	pr->fd = open("test1", O_RDONLY);
 	zero(pr);
 	while (get_next_line(pr->fd, &pr->line) > 0)
@@ -60,10 +64,10 @@ int			main(void)
 			pass(pr);
 		if (pr->end_of_file != 1)
 		{
-			save_map(pr);
+			map = save_map(pr, map);
 			parsing(pr);
 		}
-//		free(pr.line);
+//		free(pr->line);
 	}
 	if (pr->first == NULL || pr->last == NULL)
 		error();
@@ -71,8 +75,21 @@ int			main(void)
 	comparison_line(pr);
 	comparison_link(pr);
 	error_st_end(pr);
-	printf("\n");
-	algorithm(pr);
-//	output(search);
+	algorithm(pr, tmp);
+//	cleaning_leaks(pr, map);
 	return (0);
 }
+
+
+//void		cleaning_leaks(t_gl *pr, t_room *map)
+//{
+//	int i;
+//
+//	i = 0;
+//	while (map)
+//	{
+//		free(map->tmp);
+//		map = map->next;
+//	}
+//	free (map);
+//}

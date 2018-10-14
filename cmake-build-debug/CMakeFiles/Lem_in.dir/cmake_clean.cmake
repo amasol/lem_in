@@ -77,6 +77,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lem_in.dir/ft_list_size.c.o"
   "CMakeFiles/Lem_in.dir/output.c.o"
   "CMakeFiles/Lem_in.dir/swap.c.o"
+  "CMakeFiles/Lem_in.dir/list_reverse.c.o"
+  "CMakeFiles/Lem_in.dir/output_help.c.o"
+  "CMakeFiles/Lem_in.dir/algorithm_help.c.o"
   "Lem_in.pdb"
   "Lem_in"
 )
