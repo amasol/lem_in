@@ -74,7 +74,14 @@ room2-end
 
 
 
-
+static	t_f_link		*search_connection_end(t_f_link **end, char
+							**last_room, t_link **tmp)
+{
+	(*end) = check_end((*last_room), (*tmp));
+	if ((*end) != NULL && (*end)->last_room == 1)
+		return ((*end));
+	return (NULL);
+}
 
 
 

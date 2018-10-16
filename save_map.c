@@ -16,16 +16,15 @@ t_room		*save_map(t_gl *pr, t_room *map)
 {
 	t_room *map_save;
 
-//	pr->map = create_map(&(pr->map));
+	map->next = NULL;
 	map_save = map;
-//	tmp = map_save;
 	if (map_save)
 	{
 		map_save->tmp = ft_strdup(pr->line);
 		if (!(map_save->next = (t_room *)malloc(sizeof(t_room))))
 			return (NULL);
 		map_save = map_save->next;
-//		free(pr->map->tmp);
+		map_save->next = NULL;
 	}
 	return (map_save);
 }

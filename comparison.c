@@ -49,9 +49,9 @@ int				comparison_line(t_gl *pr)
 
 int				comparison_link(t_gl *pr)
 {
-	t_room *tmp;
-	t_link *first_tmp;
-	int i;
+	t_room	*tmp;
+	t_link	*first_tmp;
+	int		i;
 
 	first_tmp = pr->link;
 	while (first_tmp)
@@ -106,7 +106,6 @@ int				comparison_link_dop(t_gl *pr)
 	t_link *check;
 	t_link *go;
 
-
 	check = pr->link;
 	while (check)
 	{
@@ -120,7 +119,7 @@ int				comparison_link_dop(t_gl *pr)
 			if (go && go->next)
 				go = go->next;
 			else
-				break;
+				break ;
 		}
 		check = check->next;
 	}

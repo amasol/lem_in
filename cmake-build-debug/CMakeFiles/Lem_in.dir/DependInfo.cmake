@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/amasol/amasol/project/Lem_in/add_func.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/add_func.c.o"
   "/Users/amasol/amasol/project/Lem_in/algorithm.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/algorithm.c.o"
   "/Users/amasol/amasol/project/Lem_in/algorithm_help.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/algorithm_help.c.o"
+  "/Users/amasol/amasol/project/Lem_in/algorithm_help_two.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/algorithm_help_two.c.o"
   "/Users/amasol/amasol/project/Lem_in/arr_len.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/arr_len.c.o"
   "/Users/amasol/amasol/project/Lem_in/comparison.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/comparison.c.o"
   "/Users/amasol/amasol/project/Lem_in/error.c" "/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles/Lem_in.dir/error.c.o"

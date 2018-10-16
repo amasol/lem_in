@@ -13,7 +13,6 @@ add_executable(Lem_in
         main.c
         parsing.c
         error.c
-        add_func.c
         save_room.c
         arr_len.c
         parsing_help.c
@@ -27,6 +26,7 @@ add_executable(Lem_in
         swap.c
         list_reverse.c
         output_help.c
-        algorithm_help.c)
+        algorithm_help.c
+        algorithm_help_two.c)
 
 link_libraries(libft/libftprintf.a)

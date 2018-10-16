@@ -75,8 +75,18 @@ static int		substitution_output_helppp(t_f_link **link, t_f_link **l_tmp,
 	(*l_tmp) = (*lst)->next;
 	if (!((*ants) = (t_ants*)malloc(sizeof(t_ants))))
 		return (0);
+	(*ants)->next = NULL;
 	(*link)->access = 0;
 	return (0);
+}
+
+void		free_ants(t_ants **ants)
+{
+	while ((*ants))
+	{
+		free((*ants));
+		(*ants) = (*ants)->next;
+	}
 }
 
 //функция которая выводит все в правильном порядке !
@@ -90,6 +100,7 @@ int 		substitution_output(t_f_link *lst, t_gl *pr)
 	substitution_output_helppp(&link, &l_tmp, &ants, &lst);
 	ants = save_ants(ants, pr);
 	tmp = ants;
+	ft_putchar('\n');
 	while (pr->close != 1)
 	{
 		while (tmp)
@@ -104,5 +115,6 @@ int 		substitution_output(t_f_link *lst, t_gl *pr)
 		ft_putchar('\n');
 		tmp = ants;
 	}
+	free_ants(&ants);
 	return (0);
 }

@@ -12,7 +12,13 @@
 
 #include "lem_in.h"
 
-int 	parsing(t_gl *pr)
+static void		comment(t_gl *pr)
+{
+	if (*pr->line == '#' && *(pr->line + 1) != '#')
+		pr->com = 1;
+}
+
+int				parsing(t_gl *pr)
 {
 	pr->com = 0;
 	pr->ants_flag = 0;
@@ -20,7 +26,7 @@ int 	parsing(t_gl *pr)
 		check_error(pr);
 	if (*pr->line == '#' && *(pr->line + 1) != '#')
 		comment(pr);
-	else if  (pr->ants == 0)
+	else if (pr->ants == 0)
 		ants_num(pr);
 	if (*pr->line == '#' && *(pr->line + 1) == '#')
 		check_start(pr);
@@ -28,11 +34,10 @@ int 	parsing(t_gl *pr)
 		check_room(pr);
 	if (pr->go_link == 1 && pr->com == 0)
 		check_link(pr);
-//	free(pr->rms->name_r);
 	return (1);
 }
 
-void			ants_num(t_gl *pr) // записываем кол-во марашек !!!!
+void			ants_num(t_gl *pr)
 {
 	int i;
 
@@ -59,13 +64,7 @@ void			ants_num(t_gl *pr) // записываем кол-во марашек !!!
 	}
 }
 
-void			comment(t_gl *pr) // пропускаем коментарии
-{
-	if (*pr->line == '#' && *(pr->line + 1) != '#')
-		pr->com = 1;
-}
-
-void			check_start(t_gl *pr) // запись что мы увидели start && end && пропуск коментария если такие есть!!!
+void			check_start(t_gl *pr)
 {
 	int i;
 
@@ -73,18 +72,13 @@ void			check_start(t_gl *pr) // запись что мы увидели start &&
 	if (pr->line[i] == '#' && pr->line[i + 1] == '#'
 			&& pr->line[i + 2] != '#')
 	{
-		pr->check_room = 1;
 		if (ft_strcmp("##start", pr->line) == 0)
 			check_start_h_s(pr);
 		else if (ft_strcmp("##end", pr->line) == 0)
 			check_start_h_e(pr);
 		else if (pr->line[i] == '#' && pr->line[i + 1] == '#')
 			check_start_h_com(pr);
-//		if (pr->start > 1 || pr->end > 1)
-//			error();
 	}
 	else
 		error();
 }
-
-

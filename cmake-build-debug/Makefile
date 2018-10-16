@@ -123,33 +123,6 @@ Lem_in/fast:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/build
 .PHONY : Lem_in/fast
 
-add_func.o: add_func.c.o
-
-.PHONY : add_func.o
-
-# target to build an object file
-add_func.c.o:
-	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/add_func.c.o
-.PHONY : add_func.c.o
-
-add_func.i: add_func.c.i
-
-.PHONY : add_func.i
-
-# target to preprocess a source file
-add_func.c.i:
-	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/add_func.c.i
-.PHONY : add_func.c.i
-
-add_func.s: add_func.c.s
-
-.PHONY : add_func.s
-
-# target to generate assembly for a file
-add_func.c.s:
-	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/add_func.c.s
-.PHONY : add_func.c.s
-
 algorithm.o: algorithm.c.o
 
 .PHONY : algorithm.o
@@ -203,6 +176,33 @@ algorithm_help.s: algorithm_help.c.s
 algorithm_help.c.s:
 	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm_help.c.s
 .PHONY : algorithm_help.c.s
+
+algorithm_help_two.o: algorithm_help_two.c.o
+
+.PHONY : algorithm_help_two.o
+
+# target to build an object file
+algorithm_help_two.c.o:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm_help_two.c.o
+.PHONY : algorithm_help_two.c.o
+
+algorithm_help_two.i: algorithm_help_two.c.i
+
+.PHONY : algorithm_help_two.i
+
+# target to preprocess a source file
+algorithm_help_two.c.i:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm_help_two.c.i
+.PHONY : algorithm_help_two.c.i
+
+algorithm_help_two.s: algorithm_help_two.c.s
+
+.PHONY : algorithm_help_two.s
+
+# target to generate assembly for a file
+algorithm_help_two.c.s:
+	$(MAKE) -f CMakeFiles/Lem_in.dir/build.make CMakeFiles/Lem_in.dir/algorithm_help_two.c.s
+.PHONY : algorithm_help_two.c.s
 
 arr_len.o: arr_len.c.o
 
@@ -2319,15 +2319,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Lem_in"
-	@echo "... add_func.o"
-	@echo "... add_func.i"
-	@echo "... add_func.s"
 	@echo "... algorithm.o"
 	@echo "... algorithm.i"
 	@echo "... algorithm.s"
 	@echo "... algorithm_help.o"
 	@echo "... algorithm_help.i"
 	@echo "... algorithm_help.s"
+	@echo "... algorithm_help_two.o"
+	@echo "... algorithm_help_two.i"
+	@echo "... algorithm_help_two.s"
 	@echo "... arr_len.o"
 	@echo "... arr_len.i"
 	@echo "... arr_len.s"

@@ -12,47 +12,57 @@
 
 #include "lem_in.h"
 
-void		initialization(t_link *search)
+t_link			*search_help(t_link *tmp)
 {
-	search->step = 0;
-	search->start_let = 0;
-	search->skipping_two = 0;
-	search->search_short = 0;
-	search->last_room = 0;
-	search->index = 0;
-	search->count = 0;
-	search->line = 0;
-}
-
-t_f_link		*end_algorithm(t_link *search)
-{
-	t_f_link *end;
-	t_f_link *tmp;
-
-	if (!(end = (t_f_link *)malloc(sizeof(t_f_link))))
+	if (!tmp)
 		return (0);
-	tmp = end;
-	end->next = NULL;
-	while (search != NULL)
-//	while (search)
-	{
-		end->room_l = ft_strdup(search->room_next);
-		if (!(end->next = (t_f_link *)malloc(sizeof(t_f_link))))
-			return (NULL);
-		end = end->next;
-		search = search->last;
-	}
+	while (tmp && tmp->next)
+		tmp = tmp->next;
 	return (tmp);
 }
 
-void	reverse(t_f_link **list)
+int				definition_short(t_f_link *search_tmp, t_gl *pr, t_room *map)
 {
-	t_f_link		*tmp;
+	if (search_tmp->last_room != 1)
+		error();
+	output_map(map);
+	if (ft_strcmp(search_tmp->next->room_l, pr->last->name_r) == 0)
+		one_room(search_tmp, pr);
+	else
+		substitution_output(search_tmp, pr);
+	return (0);
+}
 
-	ft_list_reverse(list);
-	tmp = (*list);
-	(*list) = (*list)->next;
-	free(tmp);
+void			initialization(t_link **search)
+{
+	(*search)->last_room = 0;
+	(*search)->index = 0;
+	(*search)->count = 0;
+	(*search)->line = 0;
+}
+
+t_f_link		*end_algorithm(t_link *search, t_f_link *end_link)
+{
+	t_f_link *tmp;
+
+	if (!(end_link = (t_f_link *)malloc(sizeof(t_f_link))))
+		return (0);
+	end_link->next = NULL;
+	tmp = end_link;
+	while (search)
+	{
+		if (search->room_next)
+			end_link->room_l = ft_strdup(search->room_next);
+		if (search->last)
+		{
+			if (!(end_link->next = (t_f_link *)malloc(sizeof(t_f_link))))
+				return (NULL);
+			end_link = end_link->next;
+			end_link->next = NULL;
+		}
+		search = search->last;
+	}
+	return (tmp);
 }
 
 t_f_link		*check_end(char *last_room, t_link *search_tmp)
@@ -61,8 +71,8 @@ t_f_link		*check_end(char *last_room, t_link *search_tmp)
 
 	if (ft_strcmp(search_tmp->room_next, last_room) == 0)
 	{
-		end_link = end_algorithm(search_tmp);
-		reverse(&end_link);
+		end_link = end_algorithm(search_tmp, end_link);
+		ft_list_reverse(&end_link);
 		end_link->last_room = 1;
 		return (end_link);
 	}

@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-void		error()
+void		error(void)
 {
 	ft_putstr("Error validation\n");
 	exit(1);
@@ -20,8 +20,8 @@ void		error()
 
 void		error_word(t_room *rm)
 {
-	int i;
-	char *tmp;
+	int		i;
+	char	*tmp;
 
 	i = 0;
 	tmp = rm->tmp;
@@ -39,4 +39,20 @@ void		check_error(t_gl *pr)
 	if (*pr->line == '#' && *(pr->line + 1) == '#'
 			&& *(pr->line + 2) == '#')
 		error();
+}
+
+void		check_symbol(t_room *rm)
+{
+	char	*tmp;
+
+	tmp = rm->tmp;
+	while (*tmp)
+	{
+		if (*tmp == '/' || *tmp == ':' || *tmp == ';'
+			|| *tmp == '$' || *tmp == '%'
+			|| *tmp == '[' || *tmp == ']' || *tmp == '=' || *tmp == '+'
+			|| *tmp == '-' || *tmp == '(' || *tmp == ')' || *tmp == '&')
+			error();
+		tmp++;
+	}
 }

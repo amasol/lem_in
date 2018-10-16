@@ -65,7 +65,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lem_in.dir/main.c.o"
   "CMakeFiles/Lem_in.dir/parsing.c.o"
   "CMakeFiles/Lem_in.dir/error.c.o"
-  "CMakeFiles/Lem_in.dir/add_func.c.o"
   "CMakeFiles/Lem_in.dir/save_room.c.o"
   "CMakeFiles/Lem_in.dir/arr_len.c.o"
   "CMakeFiles/Lem_in.dir/parsing_help.c.o"
@@ -80,6 +79,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lem_in.dir/list_reverse.c.o"
   "CMakeFiles/Lem_in.dir/output_help.c.o"
   "CMakeFiles/Lem_in.dir/algorithm_help.c.o"
+  "CMakeFiles/Lem_in.dir/algorithm_help_two.c.o"
   "Lem_in.pdb"
   "Lem_in"
 )

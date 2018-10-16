@@ -18,7 +18,6 @@ void			check_room(t_gl *pr)
 		;
 	else if (pr)
 	{
-		pr->check_st_en = 0;
 		pr->rms = create_room(&(pr->rms));
 		if (pr->start == 1 && pr->end == 0 && pr->go_link == 0 &&
 			pr->start_let != 1)
@@ -42,11 +41,11 @@ void			check_room(t_gl *pr)
 
 void			save_room(t_gl *pr, t_room *rm)
 {
-	char **tmp;
-	int len;
+	char	**tmp;
+	int		len;
 
 	pr->i = 0;
-	if (pr->line && *pr->line && *pr->line != 'L') // запись всех комнат !
+	if (pr->line && *pr->line && *pr->line != 'L')
 	{
 		if (pr->space > 2)
 			error();
@@ -63,9 +62,9 @@ void			save_room(t_gl *pr, t_room *rm)
 	line_l(pr);
 }
 
-void			save_room_help(t_room *rm, char **tmp) //лики!!!!
+void			save_room_help(t_room *rm, char **tmp)
 {
-	rm->name_r = ft_strdup(tmp[0]);  //находяться много ликов !!!!!
+	rm->name_r = ft_strdup(tmp[0]);
 	check_xy(tmp[1]);
 	check_xy(tmp[2]);
 	rm->x = ft_atoi(tmp[1]);
@@ -76,7 +75,7 @@ void			save_room_help(t_room *rm, char **tmp) //лики!!!!
 	error_word(rm);
 }
 
-int			save_link(t_gl *pr, t_link *link)
+int				save_link(t_gl *pr, t_link *link)
 {
 	link->one = 0;
 	link->two = 0;
@@ -102,19 +101,15 @@ int				save_link_help(t_gl *pr)
 		if (str[pr->l_h] == '-')
 		{
 			tmp = ft_strsub(str, 0, pr->l_h);
-			free(tmp);
 			pr->l_s = ft_strlen(tmp);
 			pr->l_k = comparison_room_link(pr, tmp);
+			free(tmp);
 			if (pr->l_k == 1)
-			{
 				save_l_hh(pr, str);
-			}
 			if (pr->l_k == 2)
 				return (0);
 		}
 		pr->l_h++;
 	}
-	if (pr->l_k == 1 || pr->l_k > 2 || pr->l_k == 0)
-		error();
 	return (0);
 }

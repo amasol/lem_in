@@ -915,22 +915,9 @@ CMakeFiles/Lem_in.dir/error.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lem_in.dir/error.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amasol/amasol/project/Lem_in/error.c -o CMakeFiles/Lem_in.dir/error.c.s
 
-CMakeFiles/Lem_in.dir/add_func.c.o: CMakeFiles/Lem_in.dir/flags.make
-CMakeFiles/Lem_in.dir/add_func.c.o: ../add_func.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/Lem_in.dir/add_func.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/add_func.c.o   -c /Users/amasol/amasol/project/Lem_in/add_func.c
-
-CMakeFiles/Lem_in.dir/add_func.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lem_in.dir/add_func.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/amasol/amasol/project/Lem_in/add_func.c > CMakeFiles/Lem_in.dir/add_func.c.i
-
-CMakeFiles/Lem_in.dir/add_func.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lem_in.dir/add_func.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amasol/amasol/project/Lem_in/add_func.c -o CMakeFiles/Lem_in.dir/add_func.c.s
-
 CMakeFiles/Lem_in.dir/save_room.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/save_room.c.o: ../save_room.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/Lem_in.dir/save_room.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object CMakeFiles/Lem_in.dir/save_room.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/save_room.c.o   -c /Users/amasol/amasol/project/Lem_in/save_room.c
 
 CMakeFiles/Lem_in.dir/save_room.c.i: cmake_force
@@ -943,7 +930,7 @@ CMakeFiles/Lem_in.dir/save_room.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/arr_len.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/arr_len.c.o: ../arr_len.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/Lem_in.dir/arr_len.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object CMakeFiles/Lem_in.dir/arr_len.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/arr_len.c.o   -c /Users/amasol/amasol/project/Lem_in/arr_len.c
 
 CMakeFiles/Lem_in.dir/arr_len.c.i: cmake_force
@@ -956,7 +943,7 @@ CMakeFiles/Lem_in.dir/arr_len.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/parsing_help.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/parsing_help.c.o: ../parsing_help.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/Lem_in.dir/parsing_help.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object CMakeFiles/Lem_in.dir/parsing_help.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/parsing_help.c.o   -c /Users/amasol/amasol/project/Lem_in/parsing_help.c
 
 CMakeFiles/Lem_in.dir/parsing_help.c.i: cmake_force
@@ -969,7 +956,7 @@ CMakeFiles/Lem_in.dir/parsing_help.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/comparison.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/comparison.c.o: ../comparison.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/Lem_in.dir/comparison.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object CMakeFiles/Lem_in.dir/comparison.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/comparison.c.o   -c /Users/amasol/amasol/project/Lem_in/comparison.c
 
 CMakeFiles/Lem_in.dir/comparison.c.i: cmake_force
@@ -982,7 +969,7 @@ CMakeFiles/Lem_in.dir/comparison.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/error_help.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/error_help.c.o: ../error_help.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/Lem_in.dir/error_help.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object CMakeFiles/Lem_in.dir/error_help.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/error_help.c.o   -c /Users/amasol/amasol/project/Lem_in/error_help.c
 
 CMakeFiles/Lem_in.dir/error_help.c.i: cmake_force
@@ -995,7 +982,7 @@ CMakeFiles/Lem_in.dir/error_help.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/save_room_link.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/save_room_link.c.o: ../save_room_link.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/Lem_in.dir/save_room_link.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object CMakeFiles/Lem_in.dir/save_room_link.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/save_room_link.c.o   -c /Users/amasol/amasol/project/Lem_in/save_room_link.c
 
 CMakeFiles/Lem_in.dir/save_room_link.c.i: cmake_force
@@ -1008,7 +995,7 @@ CMakeFiles/Lem_in.dir/save_room_link.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/save_map.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/save_map.c.o: ../save_map.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/Lem_in.dir/save_map.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object CMakeFiles/Lem_in.dir/save_map.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/save_map.c.o   -c /Users/amasol/amasol/project/Lem_in/save_map.c
 
 CMakeFiles/Lem_in.dir/save_map.c.i: cmake_force
@@ -1021,7 +1008,7 @@ CMakeFiles/Lem_in.dir/save_map.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/algorithm.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/algorithm.c.o: ../algorithm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/Lem_in.dir/algorithm.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object CMakeFiles/Lem_in.dir/algorithm.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/algorithm.c.o   -c /Users/amasol/amasol/project/Lem_in/algorithm.c
 
 CMakeFiles/Lem_in.dir/algorithm.c.i: cmake_force
@@ -1034,7 +1021,7 @@ CMakeFiles/Lem_in.dir/algorithm.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/ft_list_size.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/ft_list_size.c.o: ../ft_list_size.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/Lem_in.dir/ft_list_size.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object CMakeFiles/Lem_in.dir/ft_list_size.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/ft_list_size.c.o   -c /Users/amasol/amasol/project/Lem_in/ft_list_size.c
 
 CMakeFiles/Lem_in.dir/ft_list_size.c.i: cmake_force
@@ -1047,7 +1034,7 @@ CMakeFiles/Lem_in.dir/ft_list_size.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/output.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/output.c.o: ../output.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/Lem_in.dir/output.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object CMakeFiles/Lem_in.dir/output.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/output.c.o   -c /Users/amasol/amasol/project/Lem_in/output.c
 
 CMakeFiles/Lem_in.dir/output.c.i: cmake_force
@@ -1060,7 +1047,7 @@ CMakeFiles/Lem_in.dir/output.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/swap.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/swap.c.o: ../swap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/Lem_in.dir/swap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object CMakeFiles/Lem_in.dir/swap.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/swap.c.o   -c /Users/amasol/amasol/project/Lem_in/swap.c
 
 CMakeFiles/Lem_in.dir/swap.c.i: cmake_force
@@ -1073,7 +1060,7 @@ CMakeFiles/Lem_in.dir/swap.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/list_reverse.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/list_reverse.c.o: ../list_reverse.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/Lem_in.dir/list_reverse.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object CMakeFiles/Lem_in.dir/list_reverse.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/list_reverse.c.o   -c /Users/amasol/amasol/project/Lem_in/list_reverse.c
 
 CMakeFiles/Lem_in.dir/list_reverse.c.i: cmake_force
@@ -1086,7 +1073,7 @@ CMakeFiles/Lem_in.dir/list_reverse.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/output_help.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/output_help.c.o: ../output_help.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/Lem_in.dir/output_help.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object CMakeFiles/Lem_in.dir/output_help.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/output_help.c.o   -c /Users/amasol/amasol/project/Lem_in/output_help.c
 
 CMakeFiles/Lem_in.dir/output_help.c.i: cmake_force
@@ -1099,7 +1086,7 @@ CMakeFiles/Lem_in.dir/output_help.c.s: cmake_force
 
 CMakeFiles/Lem_in.dir/algorithm_help.c.o: CMakeFiles/Lem_in.dir/flags.make
 CMakeFiles/Lem_in.dir/algorithm_help.c.o: ../algorithm_help.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/Lem_in.dir/algorithm_help.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object CMakeFiles/Lem_in.dir/algorithm_help.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/algorithm_help.c.o   -c /Users/amasol/amasol/project/Lem_in/algorithm_help.c
 
 CMakeFiles/Lem_in.dir/algorithm_help.c.i: cmake_force
@@ -1109,6 +1096,19 @@ CMakeFiles/Lem_in.dir/algorithm_help.c.i: cmake_force
 CMakeFiles/Lem_in.dir/algorithm_help.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lem_in.dir/algorithm_help.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amasol/amasol/project/Lem_in/algorithm_help.c -o CMakeFiles/Lem_in.dir/algorithm_help.c.s
+
+CMakeFiles/Lem_in.dir/algorithm_help_two.c.o: CMakeFiles/Lem_in.dir/flags.make
+CMakeFiles/Lem_in.dir/algorithm_help_two.c.o: ../algorithm_help_two.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object CMakeFiles/Lem_in.dir/algorithm_help_two.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lem_in.dir/algorithm_help_two.c.o   -c /Users/amasol/amasol/project/Lem_in/algorithm_help_two.c
+
+CMakeFiles/Lem_in.dir/algorithm_help_two.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lem_in.dir/algorithm_help_two.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/amasol/amasol/project/Lem_in/algorithm_help_two.c > CMakeFiles/Lem_in.dir/algorithm_help_two.c.i
+
+CMakeFiles/Lem_in.dir/algorithm_help_two.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lem_in.dir/algorithm_help_two.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/amasol/amasol/project/Lem_in/algorithm_help_two.c -o CMakeFiles/Lem_in.dir/algorithm_help_two.c.s
 
 # Object files for target Lem_in
 Lem_in_OBJECTS = \
@@ -1178,7 +1178,6 @@ Lem_in_OBJECTS = \
 "CMakeFiles/Lem_in.dir/main.c.o" \
 "CMakeFiles/Lem_in.dir/parsing.c.o" \
 "CMakeFiles/Lem_in.dir/error.c.o" \
-"CMakeFiles/Lem_in.dir/add_func.c.o" \
 "CMakeFiles/Lem_in.dir/save_room.c.o" \
 "CMakeFiles/Lem_in.dir/arr_len.c.o" \
 "CMakeFiles/Lem_in.dir/parsing_help.c.o" \
@@ -1192,7 +1191,8 @@ Lem_in_OBJECTS = \
 "CMakeFiles/Lem_in.dir/swap.c.o" \
 "CMakeFiles/Lem_in.dir/list_reverse.c.o" \
 "CMakeFiles/Lem_in.dir/output_help.c.o" \
-"CMakeFiles/Lem_in.dir/algorithm_help.c.o"
+"CMakeFiles/Lem_in.dir/algorithm_help.c.o" \
+"CMakeFiles/Lem_in.dir/algorithm_help_two.c.o"
 
 # External object files for target Lem_in
 Lem_in_EXTERNAL_OBJECTS =
@@ -1263,7 +1263,6 @@ Lem_in: CMakeFiles/Lem_in.dir/libft/get_next_line.c.o
 Lem_in: CMakeFiles/Lem_in.dir/main.c.o
 Lem_in: CMakeFiles/Lem_in.dir/parsing.c.o
 Lem_in: CMakeFiles/Lem_in.dir/error.c.o
-Lem_in: CMakeFiles/Lem_in.dir/add_func.c.o
 Lem_in: CMakeFiles/Lem_in.dir/save_room.c.o
 Lem_in: CMakeFiles/Lem_in.dir/arr_len.c.o
 Lem_in: CMakeFiles/Lem_in.dir/parsing_help.c.o
@@ -1278,6 +1277,7 @@ Lem_in: CMakeFiles/Lem_in.dir/swap.c.o
 Lem_in: CMakeFiles/Lem_in.dir/list_reverse.c.o
 Lem_in: CMakeFiles/Lem_in.dir/output_help.c.o
 Lem_in: CMakeFiles/Lem_in.dir/algorithm_help.c.o
+Lem_in: CMakeFiles/Lem_in.dir/algorithm_help_two.c.o
 Lem_in: CMakeFiles/Lem_in.dir/build.make
 Lem_in: CMakeFiles/Lem_in.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/amasol/amasol/project/Lem_in/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Linking C executable Lem_in"

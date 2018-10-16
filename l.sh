@@ -2,4 +2,4 @@
 
 make
 
-./lem_in |cat -e
+./lem-in |cat -e
